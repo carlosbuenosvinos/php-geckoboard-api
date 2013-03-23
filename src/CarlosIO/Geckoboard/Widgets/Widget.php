@@ -16,4 +16,6 @@ abstract class Widget
     {
         return $this->id;
     }
+
+    abstract public function getData();
 }

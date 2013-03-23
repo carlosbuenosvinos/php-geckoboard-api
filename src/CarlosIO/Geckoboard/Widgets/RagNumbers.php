@@ -3,7 +3,7 @@ namespace CarlosIO\Geckoboard\Widgets;
 
 use CarlosIO\Geckoboard\Widgets\Widget;
 
-class NumberAndSecondaryStat extends Widget
+class RagNumbers extends Widget
 {
     private $mainValue = null;
     private $secondaryValue = null;
@@ -45,9 +45,13 @@ class NumberAndSecondaryStat extends Widget
         return $this->secondaryValue;
     }
 
-    public function getData()
+    public function getJson()
     {
-        return array(
+        $data = array();
+        foreach($this->colors as $color) {
+
+        }
+        $data = array(
             'item' => array(
                 array(
                     'text' => '',
@@ -60,5 +64,7 @@ class NumberAndSecondaryStat extends Widget
                 )
             )
         );
+
+        return json_encode($data);
     }
 }
