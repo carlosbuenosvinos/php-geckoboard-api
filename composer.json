@@ -18,5 +18,8 @@
         "psr-0": {
             "CarlosIO": "src"
         }
+    },
+    "config": {
+        "bin-dir": "bin/"
     }
 }
