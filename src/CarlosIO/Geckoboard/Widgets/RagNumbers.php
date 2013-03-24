@@ -2,69 +2,75 @@
 namespace CarlosIO\Geckoboard\Widgets;
 
 use CarlosIO\Geckoboard\Widgets\Widget;
+use CarlosIO\Geckoboard\Data\Entry;
 
 class RagNumbers extends Widget
 {
-    private $mainValue = null;
-    private $secondaryValue = null;
-    private $mainPrefix = null;
+    protected $dataset;
 
-    public function setMainPrefix($mainPrefix)
+    public function __construct()
     {
-        $this->mainPrefix = $mainPrefix;
+        $this->dataset = array();
+    }
+
+    public function getRedData()
+    {
+        return $this->getEntry('red');
+    }
+
+    public function setRedData(Entry $entry)
+    {
+        $this->setEntry('red', $entry);
 
         return $this;
     }
 
-    public function getMainPrefix()
+    public function getAmberData()
     {
-        return $this->mainPrefix;
+        return $this->getEntry('amber');
     }
 
-    public function setMainValue($mainValue)
+    public function setAmberData(Entry $entry)
     {
-        $this->mainValue = $mainValue;
+        $this->setEntry('amber', $entry);
 
         return $this;
     }
 
-    public function getMainValue()
+    public function getGreenData()
     {
-        return $this->mainValue;
+        return $this->getEntry('green');
     }
 
-    public function setSecondaryValue($secondaryValue)
+    public function setGreenData(Entry $entry)
     {
-        $this->secondaryValue = $secondaryValue;
+        $this->setEntry('green', $entry);
 
         return $this;
     }
 
-    public function getSecondaryValue()
+    public function getData()
     {
-        return $this->secondaryValue;
-    }
-
-    public function getJson()
-    {
-        $data = array();
-        foreach($this->colors as $color) {
-
-        }
-        $data = array(
+        return array(
             'item' => array(
-                array(
-                    'text' => '',
-                    'value' => (int) $this->getMainValue(),
-                    'prefix' => (string) $this->getMainPrefix()
-                ),
-                array(
-                    'text' => '',
-                    'value' => (int) $this->getSecondaryValue()
-                )
+                $this->getRedData()->toArray(),
+                $this->getAmberData()->toArray(),
+                $this->getGreenData()->toArray()
             )
         );
+    }
 
-        return json_encode($data);
+    protected function setEntry($color, $entry)
+    {
+        $this->dataset[$color] = $entry;
+    }
+
+    protected function getEntry($color)
+    {
+        if (!isset($this->dataset[$color])) {
+            throw new \Exception('Color entry does not exist');
+        }
+
+        return $this->dataset[$color];
     }
 }
