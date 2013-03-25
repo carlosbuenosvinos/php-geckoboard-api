@@ -4,7 +4,7 @@ namespace CarlosIO\Geckoboard\Widgets;
 use CarlosIO\Geckoboard\Widgets\Widget;
 use CarlosIO\Geckoboard\Data\Entry;
 
-class GekoMeter extends Widget
+class GeckoMeter extends Widget
 {
     protected $dataset;
     protected $value;
