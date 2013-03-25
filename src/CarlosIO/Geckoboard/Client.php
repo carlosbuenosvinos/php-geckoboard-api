@@ -34,8 +34,6 @@ class Client
             'data' => $widget->getData()
         );
 
-        var_dump(json_encode($data));
-
         $this->client->post('/v1/send/' . $widget->getId(), null, json_encode($data))->send();
     }
 }
