@@ -64,7 +64,9 @@ class Client
             'data' => $widget->getData()
         );
 
-        $this->client->post('/v1/send/' . $widget->getId(), null, json_encode($data))->send();
+        $response = $this->client->post('/v1/send/' . $widget->getId(), null, json_encode($data))->send();
+        // echo json_encode($data) . PHP_EOL;
+        // echo $response->getBody() . PHP_EOL;
         return $this;
     }
 }

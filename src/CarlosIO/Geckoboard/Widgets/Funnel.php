@@ -5,7 +5,7 @@ use CarlosIO\Geckoboard\Widgets\Widget;
 
 class Funnel extends Widget
 {
-    protected $type;
+    protected $type = false;
     protected $showPercentage = true;
     protected $dataset = array();
 
@@ -38,11 +38,24 @@ class Funnel extends Widget
 
     public function getData()
     {
-        $result = array();
+        $data = array();
         foreach($this->dataset as $entry) {
-            $result[] = $entry->toArray();
+            $data[] = $entry->toArray();
         }
 
-        return array('item' => $result);
+        $result = array();
+
+        $type = $this->getType();
+        if ($type) {
+            $result['type'] = 'reverse';
+        }
+
+        $show = $this->getShowPercentage();
+        if (!$show) {
+            $result['percentage'] = 'hide';
+        }
+
+        $result['item'] = $data;
+        return $result;
     }
 }

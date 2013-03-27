@@ -58,14 +58,15 @@ class Entry
     public function toArray()
     {
         $result = array();
-        $label = $this->getLabel();
-        if (null !== $label) {
-            $result['label'] = $label;
-        }
 
         $value = $this->getValue();
         if (null !== $value) {
-            $result['value'] = $value;
+            $result['value'] = (string) $value;
+        }
+
+        $label = $this->getLabel();
+        if (null !== $label) {
+            $result['label'] = $label;
         }
 
         return $result;
