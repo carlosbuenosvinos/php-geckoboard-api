@@ -41,7 +41,7 @@ class Item
     {
         $this->text = $text;
 
-    }//end setText()
+    }
 
 
     /**
@@ -57,7 +57,7 @@ class Item
 
         return $this->text;
 
-    }//end getText()
+    }
 
 
     /**
@@ -71,7 +71,7 @@ class Item
     {
         $this->type = $type;
 
-    }//end setType()
+    }
 
 
     /**
@@ -87,7 +87,7 @@ class Item
 
         return $this->type;
 
-    }//end getType()
+    }
 
 
     /**
@@ -103,7 +103,7 @@ class Item
 
         return $result;
 
-    }//end toArray()
+    }
 
 
-}//end class
+}

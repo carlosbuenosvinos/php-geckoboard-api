@@ -20,7 +20,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
 
 
     /**
-     *
+     * Test with an empty dataset
      */
     public function testJsonForAnEmptyData()
     {
@@ -28,11 +28,11 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $json   = json_encode($widget->getData());
         $this->assertEquals('{"item":[]}', $json);
 
-    }//end testJsonForAnEmptyData()
+    }
 
 
     /**
-     *
+     * Test with an incomplete dataset
      */
     public function testJsonForSomeData()
     {
@@ -43,11 +43,11 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[{"text":"first text","type":0}]}', $json);
 
-    }//end testJsonForSomeData()
+    }
 
 
     /**
-     *
+     * Test with one full dataset
      */
     public function testJsonForFullData()
     {
@@ -59,11 +59,11 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[{"text":"first text","type":2}]}', $json);
 
-    }//end testJsonForFullData()
+    }
 
 
     /**
-     *
+     * Test with more than one dataset
      */
     public function testJsonForMultipleItems()
     {
@@ -77,7 +77,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[{"text":"first text","type":0},{"text":"","type":1}]}', $json);
 
-    }//end testJsonForMultipleItems()
+    }
 
 
-}//end class
+}

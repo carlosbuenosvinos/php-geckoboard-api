@@ -34,7 +34,7 @@ class Text extends Widget
     {
         $this->items = $items;
 
-    }//end setItems()
+    }
 
 
     /**
@@ -50,7 +50,7 @@ class Text extends Widget
 
         return $this->items;
 
-    }//end getItems()
+    }
 
 
     /**
@@ -64,7 +64,7 @@ class Text extends Widget
     {
         $this->items[] = $item;
 
-    }//end addItem()
+    }
 
 
     /**
@@ -83,7 +83,7 @@ class Text extends Widget
                 ),
                );
 
-    }//end getData()
+    }
 
 
-}//end class
+}
