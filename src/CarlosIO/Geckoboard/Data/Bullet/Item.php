@@ -150,7 +150,7 @@ class Item
 
         $result['axis']['point'] = $this->getAxisPoint();
         $result['range'] = $this->getRange();
-        $result['measurement'] = $this->getMeasure();
+        $result['measure'] = $this->getMeasure();
         $result['comparative']['point'] = $this->getComparative();
 
         return $result;
