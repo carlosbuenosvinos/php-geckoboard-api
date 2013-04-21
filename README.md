@@ -39,8 +39,8 @@ Usage
 
     $myWidget = new NumberAndSecondaryStat();
     $myWidget->setId('<your widget id>');
-    $myWidget->setMainValue(100);
-    $myWidget->setSecondaryValue(50);
+    $myWidget->setMainValue(123);
+    $myWidget->setSecondaryValue(238);
     $myWidget->setMainPrefix('EUR');
 
     $geckoboardClient = new Client();
@@ -58,8 +58,8 @@ Widget: Number and optional secondary stat
 
     $myWidget = new NumberAndSecondaryStat();
     $myWidget->setId('<your widget id>');
-    $myWidget->setMainValue(100);
-    $myWidget->setSecondaryValue(50);
+    $myWidget->setMainValue(123);
+    $myWidget->setSecondaryValue(238);
     $myWidget->setMainPrefix('EUR');
 
     $geckoboardClient = new Client();
@@ -72,35 +72,25 @@ Widget: RAG numbers only
 [![RAG numbers only](http://docs.geckoboard.com/images/RAGNumbers.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-numbers-only/)
 
 ```php
-    use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
+    use CarlosIO\Geckoboard\Data\Entry;
+    use CarlosIO\Geckoboard\Widgets\RagNumbers;
     use CarlosIO\Geckoboard\Client;
 
     $myWidget = new RagNumbers();
     $myWidget->setId('<your widget id>');
 
     $redData = new Entry();
-    $redData->setValue(15)->setText('Errors in the last 5 minutes');
+    $redData->setValue(132)->setText('This is the red description');
     $myWidget->setRedData($redData);
 
     $amberData = new Entry();
-    $amberData->setValue(15)->setText('Errors in the last 15 minutes');
+    $amberData->setValue(134)->setText('This is the amber description');
     $myWidget->setAmberData($amberData);
 
     $greenData = new Entry();
-    $greenData->setValue(15)->setText('Errors in the last 60 minutes');
+    $greenData->setValue(34)->setText('This is the green description');
     $myWidget->setGreenData($greenData);
 
-    $geckoboardClient->push($myWidget);
-
-
-    $myWidget = new NumberAndSecondaryStat();
-    $myWidget->setId('<your widget id>');
-    $myWidget->setMainValue(100);
-    $myWidget->setSecondaryValue(50);
-    $myWidget->setMainPrefix('EUR');
-
-    $geckoboardClient = new Client();
-    $geckoboardClient->setApiKey('<your token>');
     $geckoboardClient->push($myWidget);
 ```
 
