@@ -49,7 +49,7 @@ $geckoboardClient->push($myWidget);
 ```
 
 Widget: Number and optional secondary stat
-==============================
+==========================================
 [![Number and optional secondary stat](http://docs.geckoboard.com/images/Number2ndstat.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/number-and-optional-secondary-stat/)
 
 ```php
@@ -68,7 +68,7 @@ $geckoboardClient->push($myWidget);
 ```
 
 Widget: RAG numbers only
-==============================
+========================
 [![RAG numbers only](http://docs.geckoboard.com/images/RAGNumbers.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-numbers-only/)
 
 ```php
@@ -117,6 +117,30 @@ $myWidget->setAmberData($amberData);
 $greenData = new Entry();
 $greenData->setValue(3)->setText('This is the green description');
 $myWidget->setGreenData($greenData);
+
+$geckoboardClient->push($myWidget);
+```
+
+Widget: Text
+============
+[![Text](http://docs.geckoboard.com/images/Text.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/text/)
+
+```php
+use CarlosIO\Geckoboard\Widgets\Text;
+use CarlosIO\Geckoboard\Data\Text\Item;
+use CarlosIO\Geckoboard\Client;
+
+$myWidget = new Text();
+$firstItem = new Item();
+$secondItem = new Item();
+
+$firstItem->setText('Test message 1');
+
+$secondItem->setText('Test message 2');
+$secondItem->setType(Item::TYPE_ALERT);
+
+$myWidget->addItem($firstItem);
+$myWidget->addItem($secondItem);
 
 $geckoboardClient->push($myWidget);
 ```

@@ -1,44 +1,35 @@
 <?php
-
 namespace CarlosIO\Geckoboard\Widgets;
 
 use CarlosIO\Geckoboard\Widgets\Widget;
 use CarlosIO\Geckoboard\Data\Text\Item;
 
 /**
- * Contains Text class
- */
-
-
-/**
  * Class Text
- *
  * @package CarlosIO\Geckoboard\Widgets
  */
-
 class Text extends Widget
 {
-
-    /** @var array */
+    /**
+     * @var array Messages
+     */
     protected $items;
 
-
     /**
-     * Sets the items property
+     * Set the items property
      *
      * @param array $items Set of items to add to the widget
-     *
-     * @return void
+     * @return $this
      */
     public function setItems($items)
     {
         $this->items = $items;
 
+        return $this;
     }
 
-
     /**
-     * Returns the items attribute
+     * Return the items attribute
      *
      * @return array
      */
@@ -49,41 +40,33 @@ class Text extends Widget
         }
 
         return $this->items;
-
     }
 
-
     /**
-     * Adds an item to the item list
+     * Add an item to the item list
      *
      * @param \CarlosIO\Geckoboard\Data\Text\Item $item Item to be added
-     *
-     * @return void
+     * @return $this
      */
     public function addItem(Item $item)
     {
         $this->items[] = $item;
 
+        return $this;
     }
 
-
     /**
-     * Returns an array of data used to fill the widget
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getData()
     {
         return array(
-                'item' => array_map(
-                    function ($item) {
-                        return $item->toArray();
-                    },
-                    $this->getItems()
-                ),
-               );
-
+            'item' => array_map(
+                function ($item) {
+                    return $item->toArray();
+                },
+                $this->getItems()
+            )
+        );
     }
-
-
 }

@@ -5,20 +5,8 @@ namespace CarlosIO\Geckoboard\Widgets;
 use CarlosIO\Geckoboard\Widgets\Text;
 use CarlosIO\Geckoboard\Data\Text\Item;
 
-/**
- * Contains test for widget Text
- */
-
-/**
- * Class TextTest
- *
- * @package CarlosIO\Geckoboard\Widgets
- */
-
 class TextTest extends \PHPUnit_Framework_TestCase
 {
-
-
     /**
      * Test with an empty dataset
      */
@@ -27,9 +15,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $widget = new Text();
         $json   = json_encode($widget->getData());
         $this->assertEquals('{"item":[]}', $json);
-
     }
-
 
     /**
      * Test with an incomplete dataset
@@ -42,9 +28,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $widget->addItem($firstItem);
         $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[{"text":"first text","type":0}]}', $json);
-
     }
-
 
     /**
      * Test with one full dataset
@@ -58,9 +42,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $widget->addItem($firstItem);
         $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[{"text":"first text","type":2}]}', $json);
-
     }
-
 
     /**
      * Test with more than one dataset
@@ -76,8 +58,5 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $widget->addItem($secondItem);
         $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[{"text":"first text","type":0},{"text":"","type":1}]}', $json);
-
     }
-
-
 }
