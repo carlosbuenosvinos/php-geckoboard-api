@@ -9,8 +9,17 @@ use CarlosIO\Geckoboard\Widgets\Widget;
  */
 class NumberAndSecondaryStat extends Widget
 {
+    /**
+     * @var null Main value
+     */
     private $mainValue = null;
+    /**
+     * @var null Secondary value
+     */
     private $secondaryValue = null;
+    /**
+     * @var null Main value prefix
+     */
     private $mainPrefix = null;
 
     /**
@@ -83,20 +92,22 @@ class NumberAndSecondaryStat extends Widget
     }
 
     /**
-     * Get data in array format
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function getData()
     {
+        $data = array(
+            'text' => '',
+            'value' => (int) $this->getMainValue()
+        );
+
+        $prefix = $this->getMainPrefix();
+        if (null !== $prefix) {
+            $data['prefix'] = (string) $prefix;
+        }
+
         $result = array(
-            'item' => array(
-                array(
-                    'text' => '',
-                    'value' => (int) $this->getMainValue(),
-                    'prefix' => (string) $this->getMainPrefix()
-                )
-            )
+            'item' => array($data)
         );
 
         $secondaryValue = $this->getSecondaryValue();

@@ -10,7 +10,7 @@ class NumberAndSecondaryStatTest extends \PHPUnit_Framework_TestCase
     {
         $widget = new NumberAndSecondaryStat();
         $json = json_encode($widget->getData());
-        $this->assertEquals('{"item":[{"text":"","value":0,"prefix":""},{"text":"","value":0}]}', $json);
+        $this->assertEquals('{"item":[{"text":"","value":0}]}', $json);
     }
 
     public function testGetAndSetWidgetId()
@@ -27,7 +27,7 @@ class NumberAndSecondaryStatTest extends \PHPUnit_Framework_TestCase
         $widget = new NumberAndSecondaryStat();
         $widget->setMainValue(35);
         $json = json_encode($widget->getData());
-        $this->assertEquals('{"item":[{"text":"","value":35,"prefix":""},{"text":"","value":0}]}', $json);
+        $this->assertEquals('{"item":[{"text":"","value":35}]}', $json);
     }
 
     public function testJsonForFullData()
