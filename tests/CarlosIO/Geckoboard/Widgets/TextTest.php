@@ -56,6 +56,8 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $secondItem->setType(Item::TYPE_ALERT);
         $widget->addItem($firstItem);
         $widget->addItem($secondItem);
+        $widget->setItems($widget->getItems());
+
         $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[{"text":"first text","type":0},{"text":"","type":1}]}', $json);
     }
