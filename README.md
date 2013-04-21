@@ -32,20 +32,20 @@ Usage
 
 ```php
 <?php
-    require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
-    use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
-    use CarlosIO\Geckoboard\Client;
+use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
+use CarlosIO\Geckoboard\Client;
 
-    $myWidget = new NumberAndSecondaryStat();
-    $myWidget->setId('<your widget id>');
-    $myWidget->setMainValue(123);
-    $myWidget->setSecondaryValue(238);
-    $myWidget->setMainPrefix('EUR');
+$myWidget = new NumberAndSecondaryStat();
+$myWidget->setId('<your widget id>');
+$myWidget->setMainValue(123);
+$myWidget->setSecondaryValue(238);
+$myWidget->setMainPrefix('EUR');
 
-    $geckoboardClient = new Client();
-    $geckoboardClient->setApiKey('<your token>');
-    $geckoboardClient->push($myWidget);
+$geckoboardClient = new Client();
+$geckoboardClient->setApiKey('<your token>');
+$geckoboardClient->push($myWidget);
 ```
 
 Widget: Number and optional secondary stat
@@ -53,18 +53,18 @@ Widget: Number and optional secondary stat
 [![Number and optional secondary stat](http://docs.geckoboard.com/images/Number2ndstat.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/number-and-optional-secondary-stat/)
 
 ```php
-    use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
-    use CarlosIO\Geckoboard\Client;
+use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
+use CarlosIO\Geckoboard\Client;
 
-    $myWidget = new NumberAndSecondaryStat();
-    $myWidget->setId('<your widget id>');
-    $myWidget->setMainValue(123);
-    $myWidget->setSecondaryValue(238);
-    $myWidget->setMainPrefix('EUR');
+$myWidget = new NumberAndSecondaryStat();
+$myWidget->setId('<your widget id>');
+$myWidget->setMainValue(123);
+$myWidget->setSecondaryValue(238);
+$myWidget->setMainPrefix('EUR');
 
-    $geckoboardClient = new Client();
-    $geckoboardClient->setApiKey('<your token>');
-    $geckoboardClient->push($myWidget);
+$geckoboardClient = new Client();
+$geckoboardClient->setApiKey('<your token>');
+$geckoboardClient->push($myWidget);
 ```
 
 Widget: RAG numbers only
@@ -72,26 +72,53 @@ Widget: RAG numbers only
 [![RAG numbers only](http://docs.geckoboard.com/images/RAGNumbers.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-numbers-only/)
 
 ```php
-    use CarlosIO\Geckoboard\Data\Entry;
-    use CarlosIO\Geckoboard\Widgets\RagNumbers;
-    use CarlosIO\Geckoboard\Client;
+use CarlosIO\Geckoboard\Data\Entry;
+use CarlosIO\Geckoboard\Widgets\RagNumbers;
+use CarlosIO\Geckoboard\Client;
 
-    $myWidget = new RagNumbers();
-    $myWidget->setId('<your widget id>');
+$myWidget = new RagNumbers();
+$myWidget->setId('<your widget id>');
 
-    $redData = new Entry();
-    $redData->setValue(132)->setText('This is the red description');
-    $myWidget->setRedData($redData);
+$redData = new Entry();
+$redData->setValue(132)->setText('This is the red description');
+$myWidget->setRedData($redData);
 
-    $amberData = new Entry();
-    $amberData->setValue(134)->setText('This is the amber description');
-    $myWidget->setAmberData($amberData);
+$amberData = new Entry();
+$amberData->setValue(134)->setText('This is the amber description');
+$myWidget->setAmberData($amberData);
 
-    $greenData = new Entry();
-    $greenData->setValue(34)->setText('This is the green description');
-    $myWidget->setGreenData($greenData);
+$greenData = new Entry();
+$greenData->setValue(34)->setText('This is the green description');
+$myWidget->setGreenData($greenData);
 
-    $geckoboardClient->push($myWidget);
+$geckoboardClient->push($myWidget);
+```
+
+Widget: RAG column and numbers
+==============================
+[![RAG column and numbers](http://docs.geckoboard.com/images/RAGColNum.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-column-and-numbers/)
+
+```php
+use CarlosIO\Geckoboard\Data\Entry;
+use CarlosIO\Geckoboard\Widgets\RagColumnAndNumbers;
+use CarlosIO\Geckoboard\Client;
+
+$myWidget = new RagColumnAndNumbers();
+$myWidget->setId('<your widget id>');
+
+$redData = new Entry();
+$redData->setValue(132)->setText('This is the red description');
+$myWidget->setRedData($redData);
+
+$amberData = new Entry();
+$amberData->setValue(13)->setText('This is the amber description');
+$myWidget->setAmberData($amberData);
+
+$greenData = new Entry();
+$greenData->setValue(3)->setText('This is the green description');
+$myWidget->setGreenData($greenData);
+
+$geckoboardClient->push($myWidget);
 ```
 
 Testing
