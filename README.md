@@ -145,6 +145,54 @@ $myWidget->addItem($secondItem);
 $geckoboardClient->push($myWidget);
 ```
 
+Widget: Funnel
+==============
+[![Funnel](http://docs.geckoboard.com/images/Funnel.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/funnel/)
+
+```php
+use CarlosIO\Geckoboard\Data\Funnel\Entry;
+use CarlosIO\Geckoboard\Widgets\Funnel;
+
+$myWidget = new Funnel();
+$myWidget->setId('29473-d7ae87e3-ac3f-4911-95ce-ec91439a4170');
+$myWidget->setType('reversed');
+$myWidget->setShowPercentage(false);
+
+$error = new Entry();
+$error->setLabel('Step 1')->setValue(87809);
+$myWidget->addEntry($error);
+
+$error = new Entry();
+$error->setLabel('Step 2')->setValue(70022);
+$myWidget->addEntry($error);
+
+$error = new Entry();
+$error->setLabel('Step 3')->setValue(63232);
+$myWidget->addEntry($error);
+
+$error = new Entry();
+$error->setLabel('Step 4')->setValue(53232);
+$myWidget->addEntry($error);
+
+$error = new Entry();
+$error->setLabel('Step 5')->setValue(32123);
+$myWidget->addEntry($error);
+
+$error = new Entry();
+$error->setLabel('Step 6')->setValue(23232);
+$myWidget->addEntry($error);
+
+$error = new Entry();
+$error->setLabel('Step 7')->setValue(12232);
+$myWidget->addEntry($error);
+
+$error = new Entry();
+$error->setLabel('Step 8')->setValue(2323);
+$myWidget->addEntry($error);
+
+$geckoboardClient->push($myWidget);
+```
+
 Testing
 =======
 
