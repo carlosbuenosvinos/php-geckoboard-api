@@ -193,6 +193,30 @@ $myWidget->addEntry($error);
 $geckoboardClient->push($myWidget);
 ```
 
+Widget: Map
+===========
+[![Funnel](http://docs.geckoboard.com/images/Map.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/map/)
+
+```php
+use CarlosIO\Geckoboard\Data\Point;
+use CarlosIO\Geckoboard\Widgets\Map;
+
+$myWidget = new Map();
+$myWidget->setId('29473-d7ae87e3-ac3f-4911-95ce-ec91439a4170');
+
+$point = new Point();
+$point->setSize(10)->setColor('FF0000')->setLatitude('40.416775')->setLongitude('-3.70379');;
+$myWidget->addPoint($point);
+
+$geckoboardClient->push($myWidget);
+
+$error = new Point();
+$error->setLabel('Step 1')->setValue(87809);
+$myWidget->addEntry($error);
+
+$geckoboardClient->push($myWidget);
+```
+
 Testing
 =======
 
