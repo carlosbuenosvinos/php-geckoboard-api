@@ -209,12 +209,6 @@ $point->setSize(10)->setColor('FF0000')->setLatitude('40.416775')->setLongitude(
 $myWidget->addPoint($point);
 
 $geckoboardClient->push($myWidget);
-
-$error = new Point();
-$error->setLabel('Step 1')->setValue(87809);
-$myWidget->addEntry($error);
-
-$geckoboardClient->push($myWidget);
 ```
 
 Testing
