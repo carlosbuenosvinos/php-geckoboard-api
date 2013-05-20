@@ -214,6 +214,6 @@ $geckoboardClient->push($myWidget);
 Testing
 =======
 
-In order to run the test, update ```php composer.phar update --dev```
+In order to run the test, install all dependencies: ```php composer.phar install```
 
     $ bin/phpunit --coverage-text
