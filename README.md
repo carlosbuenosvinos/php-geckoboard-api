@@ -50,7 +50,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: Number and optional secondary stat
 ==========================================
-[![Number and optional secondary stat](http://docs.geckoboard.com/images/Number2ndstat.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/number-and-optional-secondary-stat/)
+[![Number and optional secondary stat](http://www.geckoboard.com/wp-content/uploads/2013/03/Number2ndstat-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/number-and-optional-secondary-stat/)
 
 ```php
 use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
@@ -69,7 +69,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: RAG numbers only
 ========================
-[![RAG numbers only](http://docs.geckoboard.com/images/RAGNumbers.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-numbers-only/)
+[![RAG numbers only](http://www.geckoboard.com/wp-content/uploads/2013/03/RAGNumbers-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-numbers-only/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Entry;
@@ -96,7 +96,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: RAG column and numbers
 ==============================
-[![RAG column and numbers](http://docs.geckoboard.com/images/RAGColNum.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-column-and-numbers/)
+[![RAG column and numbers](http://www.geckoboard.com/wp-content/uploads/2013/03/RAGColNum-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-column-and-numbers/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Entry;
@@ -123,7 +123,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: Text
 ============
-[![Text](http://docs.geckoboard.com/images/Text.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/text/)
+[![Text](http://www.geckoboard.com/wp-content/uploads/2013/03/Text-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/text/)
 
 ```php
 use CarlosIO\Geckoboard\Widgets\Text;
@@ -147,7 +147,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: Funnel
 ==============
-[![Funnel](http://docs.geckoboard.com/images/Funnel.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/funnel/)
+[![Funnel](http://www.geckoboard.com/wp-content/uploads/2013/03/Funnel-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/funnel/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Funnel\Entry;
@@ -195,7 +195,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: Map
 ===========
-[![Funnel](http://docs.geckoboard.com/images/Map.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/map/)
+[![Funnel](http://www.geckoboard.com/wp-content/uploads/2013/03/Map-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/map/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Point;
