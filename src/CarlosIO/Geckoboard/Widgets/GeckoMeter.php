@@ -70,7 +70,7 @@ class GeckoMeter extends Widget
         );
 
         if ($this->getReversed()) {
-            $result['type'] = 'reserved';
+            $result['type'] = 'reversed';
         }
 
         return $result;
