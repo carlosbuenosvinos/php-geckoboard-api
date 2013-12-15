@@ -10,7 +10,7 @@ class NumberAndSecondaryStatTest extends \PHPUnit_Framework_TestCase
     {
         $widget = new NumberAndSecondaryStat();
         $json = json_encode($widget->getData());
-        $this->assertEquals('{"item":[{"text":"","value":0}]}', $json);
+        $this->assertEquals('{"item":[{"text":"","value":0}],"type":null}', $json);
     }
 
     public function testGetAndSetWidgetId()
@@ -27,7 +27,7 @@ class NumberAndSecondaryStatTest extends \PHPUnit_Framework_TestCase
         $widget = new NumberAndSecondaryStat();
         $widget->setMainValue(35);
         $json = json_encode($widget->getData());
-        $this->assertEquals('{"item":[{"text":"","value":35}]}', $json);
+        $this->assertEquals('{"item":[{"text":"","value":35}],"type":null}', $json);
     }
 
     public function testJsonForFullData()
@@ -37,6 +37,15 @@ class NumberAndSecondaryStatTest extends \PHPUnit_Framework_TestCase
         $widget->setSecondaryValue(50);
         $widget->setMainPrefix('EUR');
         $json = json_encode($widget->getData());
-        $this->assertEquals('{"item":[{"text":"","value":100,"prefix":"EUR"},{"text":"","value":50}]}', $json);
+        $this->assertEquals('{"item":[{"text":"","value":100,"prefix":"EUR"},{"text":"","value":50}],"type":null}', $json);
+    }
+
+    public function testSettingADifferentType()
+    {
+        $widget = new NumberAndSecondaryStat();
+        $widget->setMainValue(100);
+        $widget->setType(NumberAndSecondaryStat::TYPE_REVERSE);
+        $json = json_encode($widget->getData());
+        $this->assertEquals('{"item":[{"text":"","value":100}],"type":"reverse"}', $json);
     }
 }

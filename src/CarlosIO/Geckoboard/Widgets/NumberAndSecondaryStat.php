@@ -9,6 +9,9 @@ use CarlosIO\Geckoboard\Widgets\Widget;
  */
 class NumberAndSecondaryStat extends Widget
 {
+    const TYPE_REGULAR = null;
+    const TYPE_REVERSE = 'reverse';
+
     /**
      * @var null Main value
      */
@@ -21,6 +24,10 @@ class NumberAndSecondaryStat extends Widget
      * @var null Main value prefix
      */
     private $mainPrefix = null;
+    /**
+     * @var null Main value prefix
+     */
+    private $type = null;
 
     /**
      * Set data main prefix (€, $, etc.)
@@ -92,13 +99,33 @@ class NumberAndSecondaryStat extends Widget
     }
 
     /**
+     * @param string|null $prefix
+     */
+    public function setType($prefix)
+    {
+        $this->type = $prefix;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+
+
+    /**
      * {@inheritdoc}
      */
     public function getData()
     {
         $data = array(
             'text' => '',
-            'value' => (int) $this->getMainValue()
+            'value' => (int) $this->getMainValue(),
         );
 
         $prefix = $this->getMainPrefix();
@@ -107,7 +134,8 @@ class NumberAndSecondaryStat extends Widget
         }
 
         $result = array(
-            'item' => array($data)
+            'item' => array($data),
+            'type' => $this->getType(),
         );
 
         $secondaryValue = $this->getSecondaryValue();
