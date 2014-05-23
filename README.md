@@ -131,6 +131,8 @@ use CarlosIO\Geckoboard\Data\Text\Item;
 use CarlosIO\Geckoboard\Client;
 
 $myWidget = new Text();
+$myWidget->setId('<your widget id>');
+
 $firstItem = new Item();
 $secondItem = new Item();
 
@@ -154,7 +156,7 @@ use CarlosIO\Geckoboard\Data\Funnel\Entry;
 use CarlosIO\Geckoboard\Widgets\Funnel;
 
 $myWidget = new Funnel();
-$myWidget->setId('29473-d7ae87e3-ac3f-4911-95ce-ec91439a4170');
+$myWidget->setId('<your widget id>');
 $myWidget->setType('reversed');
 $myWidget->setShowPercentage(false);
 
@@ -202,10 +204,10 @@ use CarlosIO\Geckoboard\Data\Point;
 use CarlosIO\Geckoboard\Widgets\Map;
 
 $myWidget = new Map();
-$myWidget->setId('29473-d7ae87e3-ac3f-4911-95ce-ec91439a4170');
+$myWidget->setId('<your widget id>');
 
 $point = new Point();
-$point->setSize(10)->setColor('FF0000')->setLatitude('40.416775')->setLongitude('-3.70379');;
+$point->setSize(10)->setColor('FF0000')->setLatitude('40.416775')->setLongitude('-3.70379');
 $myWidget->addPoint($point);
 
 $geckoboardClient->push($myWidget);
@@ -214,6 +216,6 @@ $geckoboardClient->push($myWidget);
 Testing
 =======
 
-In order to run the test, update ```php composer.phar update --dev```
+In order to run the test
 
     $ bin/phpunit --coverage-text
