@@ -1,3 +1,6 @@
+https://developer.yahoo.com/weather/#req
+https://www.pingdom.com/features/api/documentation/
+
 CarlosIO\Geckoboard
 ===================
 
