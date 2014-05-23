@@ -69,7 +69,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: RAG numbers only
 ========================
-[![RAG numbers only](http://www.geckoboard.com/wp-content/uploads/2013/03/RAGNumbers-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-numbers-only/)
+[![RAG numbers only](http://cdn2.hubspot.net/hub/326854/file-376184420-png/images/RAGNumbers-1.png?t=1383905917000)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-numbers-only/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Entry;
