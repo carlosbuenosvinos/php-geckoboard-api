@@ -18,8 +18,7 @@ class LineChartTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test with a full dataset
-     *
-     */ 
+     */
     public function testJsonWithValidData()
     {
         $widget = new LineChart();
