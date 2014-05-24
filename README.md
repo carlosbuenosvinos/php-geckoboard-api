@@ -200,6 +200,9 @@ Widget: Geck-o-Meter
 [![Geck-o-Meter](http://cdn2.hubspot.net/hub/326854/file-373966356-png/images/Geck-O-Meter-1.png?t=1383906792000)](http://www.geckoboard.com/developers/custom-widgets/widget-types/geck-o-meter)
 
 ```php
+use CarlosIO\Geckoboard\Data\Entry;
+use CarlosIO\Geckoboard\Widgets\GeckoMeter;
+
 $widget = new GeckoMeter();
 $widget->setId('<your widget id>');
 
