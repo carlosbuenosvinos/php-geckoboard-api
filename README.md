@@ -1,6 +1,3 @@
-https://developer.yahoo.com/weather/#req
-https://www.pingdom.com/features/api/documentation/
-
 CarlosIO\Geckoboard
 ===================
 
@@ -16,7 +13,7 @@ The best way to install the library is by using [Composer](http://getcomposer.or
 ``` javascript
 {
     "require": {
-        "carlosio/geckoboard": "dev-master"
+        "carlosio/geckoboard": "~1.*"
     }
 }
 ```
