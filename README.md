@@ -36,15 +36,15 @@ require __DIR__ . '/vendor/autoload.php';
 use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
 use CarlosIO\Geckoboard\Client;
 
-$myWidget = new NumberAndSecondaryStat();
-$myWidget->setId('<your widget id>');
-$myWidget->setMainValue(123);
-$myWidget->setSecondaryValue(238);
-$myWidget->setMainPrefix('EUR');
+$widget = new NumberAndSecondaryStat();
+$widget->setId('<your widget id>');
+$widget->setMainValue(123);
+$widget->setSecondaryValue(238);
+$widget->setMainPrefix('EUR');
 
 $geckoboardClient = new Client();
 $geckoboardClient->setApiKey('<your token>');
-$geckoboardClient->push($myWidget);
+$geckoboardClient->push($widget);
 ```
 
 Widget: Number and optional secondary stat
@@ -55,15 +55,15 @@ Widget: Number and optional secondary stat
 use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
 use CarlosIO\Geckoboard\Client;
 
-$myWidget = new NumberAndSecondaryStat();
-$myWidget->setId('<your widget id>');
-$myWidget->setMainValue(123);
-$myWidget->setSecondaryValue(238);
-$myWidget->setMainPrefix('EUR');
+$widget = new NumberAndSecondaryStat();
+$widget->setId('<your widget id>');
+$widget->setMainValue(123);
+$widget->setSecondaryValue(238);
+$widget->setMainPrefix('EUR');
 
 $geckoboardClient = new Client();
 $geckoboardClient->setApiKey('<your token>');
-$geckoboardClient->push($myWidget);
+$geckoboardClient->push($widget);
 ```
 
 Widget: RAG numbers only
@@ -75,22 +75,22 @@ use CarlosIO\Geckoboard\Data\Entry;
 use CarlosIO\Geckoboard\Widgets\RagNumbers;
 use CarlosIO\Geckoboard\Client;
 
-$myWidget = new RagNumbers();
-$myWidget->setId('<your widget id>');
+$widget = new RagNumbers();
+$widget->setId('<your widget id>');
 
 $redData = new Entry();
 $redData->setValue(132)->setText('This is the red description');
-$myWidget->setRedData($redData);
+$widget->setRedData($redData);
 
 $amberData = new Entry();
 $amberData->setValue(134)->setText('This is the amber description');
-$myWidget->setAmberData($amberData);
+$widget->setAmberData($amberData);
 
 $greenData = new Entry();
 $greenData->setValue(34)->setText('This is the green description');
-$myWidget->setGreenData($greenData);
+$widget->setGreenData($greenData);
 
-$geckoboardClient->push($myWidget);
+$geckoboardClient->push($widget);
 ```
 
 Widget: RAG column and numbers
@@ -102,22 +102,22 @@ use CarlosIO\Geckoboard\Data\Entry;
 use CarlosIO\Geckoboard\Widgets\RagColumnAndNumbers;
 use CarlosIO\Geckoboard\Client;
 
-$myWidget = new RagColumnAndNumbers();
-$myWidget->setId('<your widget id>');
+$widget = new RagColumnAndNumbers();
+$widget->setId('<your widget id>');
 
 $redData = new Entry();
 $redData->setValue(132)->setText('This is the red description');
-$myWidget->setRedData($redData);
+$widget->setRedData($redData);
 
 $amberData = new Entry();
 $amberData->setValue(13)->setText('This is the amber description');
-$myWidget->setAmberData($amberData);
+$widget->setAmberData($amberData);
 
 $greenData = new Entry();
 $greenData->setValue(3)->setText('This is the green description');
-$myWidget->setGreenData($greenData);
+$widget->setGreenData($greenData);
 
-$geckoboardClient->push($myWidget);
+$geckoboardClient->push($widget);
 ```
 
 Widget: Text
@@ -129,8 +129,8 @@ use CarlosIO\Geckoboard\Widgets\Text;
 use CarlosIO\Geckoboard\Data\Text\Item;
 use CarlosIO\Geckoboard\Client;
 
-$myWidget = new Text();
-$myWidget->setId('<your widget id>');
+$widget = new Text();
+$widget->setId('<your widget id>');
 
 $firstItem = new Item();
 $secondItem = new Item();
@@ -140,10 +140,10 @@ $firstItem->setText('Test message 1');
 $secondItem->setText('Test message 2');
 $secondItem->setType(Item::TYPE_ALERT);
 
-$myWidget->addItem($firstItem);
-$myWidget->addItem($secondItem);
+$widget->addItem($firstItem);
+$widget->addItem($secondItem);
 
-$geckoboardClient->push($myWidget);
+$geckoboardClient->push($widget);
 ```
 
 Widget: Funnel
@@ -154,62 +154,79 @@ Widget: Funnel
 use CarlosIO\Geckoboard\Data\Funnel\Entry;
 use CarlosIO\Geckoboard\Widgets\Funnel;
 
-$myWidget = new Funnel();
-$myWidget->setId('<your widget id>');
-$myWidget->setType('reversed');
-$myWidget->setShowPercentage(false);
+$widget = new Funnel();
+$widget->setId('<your widget id>');
+$widget->setType('reversed');
+$widget->setShowPercentage(false);
 
 $error = new Entry();
 $error->setLabel('Step 1')->setValue(87809);
-$myWidget->addEntry($error);
+$widget->addEntry($error);
 
 $error = new Entry();
 $error->setLabel('Step 2')->setValue(70022);
-$myWidget->addEntry($error);
+$widget->addEntry($error);
 
 $error = new Entry();
 $error->setLabel('Step 3')->setValue(63232);
-$myWidget->addEntry($error);
+$widget->addEntry($error);
 
 $error = new Entry();
 $error->setLabel('Step 4')->setValue(53232);
-$myWidget->addEntry($error);
+$widget->addEntry($error);
 
 $error = new Entry();
 $error->setLabel('Step 5')->setValue(32123);
-$myWidget->addEntry($error);
+$widget->addEntry($error);
 
 $error = new Entry();
 $error->setLabel('Step 6')->setValue(23232);
-$myWidget->addEntry($error);
+$widget->addEntry($error);
 
 $error = new Entry();
 $error->setLabel('Step 7')->setValue(12232);
-$myWidget->addEntry($error);
+$widget->addEntry($error);
 
 $error = new Entry();
 $error->setLabel('Step 8')->setValue(2323);
-$myWidget->addEntry($error);
+$widget->addEntry($error);
 
-$geckoboardClient->push($myWidget);
+$geckoboardClient->push($widget);
 ```
 
 Widget: Map
 ===========
-[![Funnel](http://cdn2.hubspot.net/hub/326854/file-371190739-png/images/Map-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/map/)
+[![Map](http://cdn2.hubspot.net/hub/326854/file-371190739-png/images/Map-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/map/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Point;
 use CarlosIO\Geckoboard\Widgets\Map;
 
-$myWidget = new Map();
-$myWidget->setId('<your widget id>');
+$widget = new Map();
+$widget->setId('<your widget id>');
 
 $point = new Point();
 $point->setSize(10)->setColor('FF0000')->setLatitude('40.416775')->setLongitude('-3.70379');
-$myWidget->addPoint($point);
+$widget->addPoint($point);
 
-$geckoboardClient->push($myWidget);
+$geckoboardClient->push($widget);
+```
+
+Widget: LineChart
+=================
+[![Line Chart](http://cdn2.hubspot.net/hub/326854/file-373977296-png/images/Line-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/line-chart)
+
+```php
+use CarlosIO\Geckoboard\Widgets\LineChart;
+
+$widget = new LineChart();
+$widget->setId('<your widget id>');
+$widget->setItems(array(1, 1.23));
+$widget->setColour("ff0000");
+$widget->setAxis(LineChart::DIMENSION_X, array("min", "max"));
+$widget->setAxis(LineChart::DIMENSION_Y, array("bottom", "top"));
+
+$geckoboardClient->push($widget);
 ```
 
 Testing
