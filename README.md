@@ -3,7 +3,7 @@ CarlosIO\Geckoboard
 
 [![Build Status](https://secure.travis-ci.org/carlosbuenosvinos/php-geckoboard-api.png?branch=master)](http://travis-ci.org/carlosbuenosvinos/php-geckoboard-api)
 
-A PHP library for dealing with Geckoboard API (http://www.geckoboard.com)
+A PHP library for pushing data into Geckoboard custom widgets (http://www.geckoboard.com)
 
 Installation
 ============
