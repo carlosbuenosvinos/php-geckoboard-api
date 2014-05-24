@@ -31,7 +31,6 @@ Usage
 =====
 
 ```php
-<?php
 require __DIR__ . '/vendor/autoload.php';
 
 use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
@@ -50,7 +49,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: Number and optional secondary stat
 ==========================================
-[![Number and optional secondary stat](http://www.geckoboard.com/wp-content/uploads/2013/03/Number2ndstat-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/number-and-optional-secondary-stat/)
+[![Number and optional secondary stat](http://cdn2.hubspot.net/hub/326854/file-376188200-png/images/Number2ndstat-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/number-and-optional-secondary-stat/)
 
 ```php
 use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
@@ -69,7 +68,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: RAG numbers only
 ========================
-[![RAG numbers only](http://cdn2.hubspot.net/hub/326854/file-376184420-png/images/RAGNumbers-1.png?t=1383905917000)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-numbers-only/)
+[![RAG numbers only](http://cdn2.hubspot.net/hub/326854/file-376184420-png/images/RAGNumbers-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-numbers-only/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Entry;
@@ -96,7 +95,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: RAG column and numbers
 ==============================
-[![RAG column and numbers](http://www.geckoboard.com/wp-content/uploads/2013/03/RAGColNum-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-column-and-numbers/)
+[![RAG column and numbers](http://cdn2.hubspot.net/hub/326854/file-377705499-png/images/RAGColNum-1-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/rag-column-and-numbers/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Entry;
@@ -123,7 +122,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: Text
 ============
-[![Text](http://www.geckoboard.com/wp-content/uploads/2013/03/Text-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/text/)
+[![Text](http://cdn2.hubspot.net/hub/326854/file-371241154-png/images/Text-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/text/)
 
 ```php
 use CarlosIO\Geckoboard\Widgets\Text;
@@ -149,7 +148,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: Funnel
 ==============
-[![Funnel](http://www.geckoboard.com/wp-content/uploads/2013/03/Funnel-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/funnel/)
+[![Funnel](http://cdn2.hubspot.net/hub/326854/file-373981786-png/images/Funnel-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/funnel/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Funnel\Entry;
@@ -197,7 +196,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: Map
 ===========
-[![Funnel](http://www.geckoboard.com/wp-content/uploads/2013/03/Map-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/map/)
+[![Funnel](http://docs.geckoboard.com/images/Map.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/map/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Point;
@@ -216,6 +215,6 @@ $geckoboardClient->push($myWidget);
 Testing
 =======
 
-In order to run the test
+In order to run the test, install all dependencies: ```php composer.phar install```
 
     $ bin/phpunit --coverage-text
