@@ -196,7 +196,7 @@ $geckoboardClient->push($myWidget);
 
 Widget: Map
 ===========
-[![Funnel](http://docs.geckoboard.com/images/Map.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/map/)
+[![Funnel](http://cdn2.hubspot.net/hub/326854/file-371190739-png/images/Map-1.png)](http://www.geckoboard.com/developers/custom-widgets/widget-types/map/)
 
 ```php
 use CarlosIO\Geckoboard\Data\Point;
