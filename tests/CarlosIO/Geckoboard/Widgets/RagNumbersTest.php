@@ -7,9 +7,13 @@ use CarlosIO\Geckoboard\Widgets\RagNumbers;
 
 class RagNumbersTest extends \PHPUnit_Framework_TestCase
 {
-    public function testJsonForFullData()
+    /**
+     * @test
+     * @dataProvider widgetProvider
+     */
+    public function jsonForFullData($widgetName)
     {
-        $widget = new RagNumbers();
+        $widget = new $widgetName;
         $widget->setId('29473-d7ae87e3-ac3f-4911-95ce-ec91439a4170');
 
         $redData = new Entry();
@@ -28,9 +32,14 @@ class RagNumbersTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('{"item":[{"text":"Errors in the last 5 minutes","value":15},{"text":"Errors in the last 15 minutes","value":15},{"text":"Errors in the last 60 minutes","value":15}]}', $json);
     }
 
-    public function testJsonForGreenAndRedData()
+    /**
+     * @test
+     * @dataProvider widgetProvider
+     */
+    public function JsonForGreenAndRedData($widgetName)
     {
-        $widget = new RagNumbers();
+        $widget = new $widgetName;
+
         $widget->setId('29473-d7ae87e3-ac3f-4911-95ce-ec91439a4170');
 
         $redData = new Entry();
@@ -43,5 +52,13 @@ class RagNumbersTest extends \PHPUnit_Framework_TestCase
 
         $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[{"text":"Errors in the last 5 minutes","value":15},{"text":"Errors in the last 60 minutes","value":15}]}', $json);
+    }
+
+    public function widgetProvider()
+    {
+        return array(
+            array('CarlosIO\Geckoboard\Widgets\RagNumbers'),
+            array('CarlosIO\Geckoboard\Widgets\RagColumnAndNumbers')
+        );
     }
 }
