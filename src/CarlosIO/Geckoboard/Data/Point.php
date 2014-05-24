@@ -1,6 +1,8 @@
 <?php
 namespace CarlosIO\Geckoboard\Data;
 
+use CarlosIO\Geckoboard\Data\Point\SizeOutOfBoundsException;
+
 /**
  * Class Point
  * @package CarlosIO\Geckoboard\Data
@@ -8,39 +10,50 @@ namespace CarlosIO\Geckoboard\Data;
 class Point
 {
     /**
-     * @var null
+     * @var string
      */
-    protected $cityName = null;
+    protected $cityName;
 
     /**
-     * @var null
+     * @var string
      */
-    protected $countryCode = null;
+    protected $countryCode;
 
     /**
-     * @var null
+     * @var int
      */
-    protected $size = null;
+    protected $size;
 
     /**
-     * @var null
+     * @var string
      */
-    protected $color = null;
+    protected $color;
 
     /**
-     * @var null
+     * @var string
      */
-    protected $cssClass = null;
+    protected $cssClass;
 
     /**
-     * @var null
+     * @var string
      */
-    protected $latitude = null;
+    protected $latitude;
 
     /**
-     * @var null
+     * @var string
      */
-    protected $longitude = null;
+    protected $longitude;
+
+    public function __construct()
+    {
+        $this->cityName = null;
+        $this->countryCode = null;
+        $this->size = null;
+        $this->color = null;
+        $this->cssClass = null;
+        $this->latitude = null;
+        $this->longitude = null;
+    }
 
     /**
      * @param $latitude
@@ -158,10 +171,16 @@ class Point
 
     /**
      * @param $size
+     * @throws Point\SizeOutOfBoundsException
      * @return $this
      */
     public function setSize($size)
     {
+        $size = abs((int) $size);
+        if ($size < 1 || $size > 10) {
+            throw new SizeOutOfBoundsException('Map point size should be between 1 and 10');
+        }
+
         $this->size = $size;
 
         return $this;
@@ -181,7 +200,6 @@ class Point
     public function toArray()
     {
         $result = array();
-
         $cityData = array();
 
         $cityName = $this->getCityName();
