@@ -2,14 +2,14 @@
 
 namespace CarlosIO\Geckoboard\Tests;
 
-use CarlosIO\Geckoboard\Client;
+use CarlosIO\Geckoboard\Client as Geckoboard;
 use CarlosIO\Geckoboard\Tests\DummyClient;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
     public function testFullMethodsDataEntry()
     {
-        $client = new Client();
+        $client = new Geckoboard();
         $this->assertSame('foo', $client->setApiKey('foo')->getApiKey());
     }
 
