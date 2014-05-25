@@ -248,6 +248,22 @@ $widget->setAxis(LineChart::DIMENSION_Y, array("bottom", "top"));
 $geckoboardClient->push($widget);
 ```
 
+Push more than one widget at the same time
+===========================================
+
+```php
+$widgets = array();
+$widget = new LineChart();
+// Fill your line chart...
+$widgets[] = $widget;
+
+$widget = new Map();
+// Fill your map...
+$widgets[] = $widget;
+
+$geckoboardClient->push($widgets);
+```
+
 Testing
 =======
 

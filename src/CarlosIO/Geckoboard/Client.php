@@ -10,6 +10,8 @@ use CarlosIO\Geckoboard\Widgets\Widget;
  */
 class Client
 {
+    const URI = 'https://push.geckoboard.com';
+
     /**
      * @var \Guzzle\Http\Client
      */
@@ -24,8 +26,8 @@ class Client
      */
     public function __construct()
     {
-        $this->client = new Guzzle('https://push.geckoboard.com');
         $this->api = '';
+        $this->client = new Guzzle(self::URI);
     }
 
     /**
@@ -57,16 +59,52 @@ class Client
      * @param Widget $widget
      * @return $this
      */
-    public function push(Widget $widget)
+    public function push($widget)
     {
-        $data = array(
-            'api_key' => $this->getApiKey(),
-            'data' => $widget->getData()
+        $this->pushWidgets(
+            $this->getWidgetsArray($widget)
         );
 
-        $response = $this->client->post('/v1/send/' . $widget->getId(), null, json_encode($data))->send();
-        // echo json_encode($data) . PHP_EOL;
-        // echo $response->getBody() . PHP_EOL;
         return $this;
+    }
+
+    /**
+     * @param $widget
+     * @return array
+     */
+    private function getWidgetsArray($widget)
+    {
+        $widgets = array();
+        if (!is_array($widget)) {
+            $widgets = array($widget);
+        }
+
+        return $widgets;
+    }
+
+    /**
+     * @param $widgets
+     */
+    private function pushWidgets($widgets)
+    {
+        foreach ($widgets as $widget) {
+            $this->pushWidget($widget);
+        }
+    }
+
+    /**
+     * @param $widget
+     */
+    private function pushWidget($widget)
+    {
+        $this->client->post(
+            '/v1/send/'.$widget->getId(),
+            null,
+            json_encode(
+                array(
+                    'api_key' => $this->getApiKey(),
+                    'data' => $widget->getData()
+                )
+            ))->send();
     }
 }
