@@ -1,6 +1,6 @@
 <?php
 
-namespace CarlosIO\Geckoboard\Widgets;
+namespace CarlosIO\Geckoboard\Tests\Data;
 
 use CarlosIO\Geckoboard\Data\Entry;
 

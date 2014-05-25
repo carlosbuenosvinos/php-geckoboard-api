@@ -1,4 +1,5 @@
 <?php
+
 namespace CarlosIO\Geckoboard;
 
 use Guzzle\Http\Client as Guzzle;
@@ -16,6 +17,7 @@ class Client
      * @var \Guzzle\Http\Client
      */
     protected $client;
+
     /**
      * @var string
      */

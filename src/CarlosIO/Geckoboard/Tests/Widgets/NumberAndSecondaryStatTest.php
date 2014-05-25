@@ -1,6 +1,6 @@
 <?php
 
-namespace CarlosIO\Geckoboard\Widgets;
+namespace CarlosIO\Geckoboard\Tests\Widgets;
 
 use CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat;
 
