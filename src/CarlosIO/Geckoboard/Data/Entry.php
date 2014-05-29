@@ -22,6 +22,7 @@ class Entry
 
     /**
      * @param $prefix
+     * @return $this
      */
     public function setPrefix($prefix)
     {
@@ -40,6 +41,7 @@ class Entry
 
     /**
      * @param $text
+     * @return $this
      */
     public function setText($text)
     {
@@ -58,6 +60,7 @@ class Entry
 
     /**
      * @param $value
+     * @return $this
      */
     public function setValue($value)
     {

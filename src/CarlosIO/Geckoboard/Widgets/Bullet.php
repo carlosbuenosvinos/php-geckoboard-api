@@ -11,11 +11,12 @@ use CarlosIO\Geckoboard\Widgets\Widget;
 class Bullet extends Widget
 {
     protected $item;
-    protected $orientation = 'horizontal';
+    protected $orientation;
 
     public function __construct()
     {
         $this->dataset = array();
+        $this->orientation = 'horizontal';
     }
 
     /**

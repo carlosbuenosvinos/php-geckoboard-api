@@ -8,14 +8,20 @@ namespace CarlosIO\Geckoboard\Data\Funnel;
 class Entry
 {
     /**
-     * @var
+     * @var string
      */
-    protected $value = null;
+    protected $value;
 
     /**
-     * @var
+     * @var string
      */
-    protected $label = null;
+    protected $label;
+
+    public function __construct()
+    {
+        $this->value = null;
+        $this->label = null;
+    }
 
     /**
      * @param $value
@@ -40,7 +46,7 @@ class Entry
     }
 
     /**
-     * @return
+     * @return string
      */
     public function getLabel()
     {
@@ -48,13 +54,16 @@ class Entry
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getValue()
     {
         return $this->value;
     }
 
+    /**
+     * @return array
+     */
     public function toArray()
     {
         $result = array();

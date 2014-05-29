@@ -9,30 +9,46 @@ namespace CarlosIO\Geckoboard\Data\Bullet;
 class Item
 {
     /**
-     * @var null
+     * @var string
      */
-    protected $label = null;
+    protected $label;
+
     /**
-     * @var null
+     * @var string
      */
-    protected $sublabel = null;
+    protected $sublabel;
+
     /**
      * @var array
      */
-    protected $axisPoint = array();
+    protected $axisPoint;
 
     /**
-     * @var
+     * @var string
      */
     protected $range;
 
     /**
-     * @var
+     * @var string
      */
     protected $measure;
 
+    /**
+     * @var string
+     */
     protected $comparative;
 
+    public function __construct()
+    {
+        $this->axisPoint = array();
+        $this->label = null;
+        $this->sublabel = null;
+    }
+
+    /**
+     * @param $comparative
+     * @return $this
+     */
     public function setComparative($comparative)
     {
         $this->comparative = $comparative;
@@ -40,6 +56,9 @@ class Item
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getComparative()
     {
         return $this->comparative;
