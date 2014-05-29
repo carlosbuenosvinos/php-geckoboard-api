@@ -11,7 +11,7 @@ class ListWidgetTest extends \PHPUnit_Framework_TestCase{
      * @test
      */
 
-    function can_add_a_single_item(){
+    public function can_add_a_single_item(){
         $widget = new ListWidget();
 
         $title = new Title();
@@ -31,7 +31,7 @@ class ListWidgetTest extends \PHPUnit_Framework_TestCase{
      * @test
      */
 
-    function can_add_a_multiple_item(){
+    public function can_add_multiple_items(){
         $widget = new ListWidget();
 
         $title = new Title();
