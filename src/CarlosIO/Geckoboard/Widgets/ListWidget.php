@@ -1,12 +1,11 @@
 <?php
-
 namespace CarlosIO\Geckoboard\Widgets;
-
 
 use CarlosIO\Geckoboard\Data\ListWidget\Label;
 use CarlosIO\Geckoboard\Data\ListWidget\Title;
 
-class ListWidget extends Widget{
+class ListWidget extends Widget
+{
 
     protected $items;
 

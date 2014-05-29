@@ -1,15 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: visti
- * Date: 24/5/14
- * Time: 6:06 PM
- */
-
 namespace CarlosIO\Geckoboard\Data\ListWidget;
 
-
-class Title {
+class Title 
+{
 
     /**
      * @var string

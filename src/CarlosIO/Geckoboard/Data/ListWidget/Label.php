@@ -1,9 +1,8 @@
 <?php
-
 namespace CarlosIO\Geckoboard\Data\ListWidget;
 
-
-class Label {
+class Label 
+{
 
     /**
      * @var string
