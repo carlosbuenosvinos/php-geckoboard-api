@@ -1,9 +1,14 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Widgets;
 
 use CarlosIO\Geckoboard\Widgets\Widget;
 use CarlosIO\Geckoboard\Data\Entry;
 
+/**
+ * Class GeckoMeter
+ * @package CarlosIO\Geckoboard\Widgets
+ */
 class GeckoMeter extends Widget
 {
     protected $dataset;
@@ -79,6 +84,8 @@ class GeckoMeter extends Widget
     protected function setEntry($level, $entry)
     {
         $this->dataset[$level] = $entry;
+
+        return $this;
     }
 
     protected function getEntry($level)

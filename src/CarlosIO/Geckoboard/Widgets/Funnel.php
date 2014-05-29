@@ -1,8 +1,13 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Widgets;
 
 use CarlosIO\Geckoboard\Widgets\Widget;
 
+/**
+ * Class Funnel
+ * @package CarlosIO\Geckoboard\Widgets
+ */
 class Funnel extends Widget
 {
     protected $type = false;
@@ -12,6 +17,7 @@ class Funnel extends Widget
     public function setShowPercentage($showPercentage)
     {
         $this->showPercentage = $showPercentage;
+
         return $this;
     }
 
@@ -23,6 +29,7 @@ class Funnel extends Widget
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -34,6 +41,8 @@ class Funnel extends Widget
     public function addEntry($entry)
     {
         $this->dataset[] = $entry;
+
+        return $this;
     }
 
     public function getData()
@@ -56,6 +65,7 @@ class Funnel extends Widget
         }
 
         $result['item'] = $data;
+
         return $result;
     }
 }

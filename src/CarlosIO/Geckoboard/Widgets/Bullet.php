@@ -1,8 +1,13 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Widgets;
 
 use CarlosIO\Geckoboard\Widgets\Widget;
 
+/**
+ * Class Bullet
+ * @package CarlosIO\Geckoboard\Widgets
+ */
 class Bullet extends Widget
 {
     protected $item;
@@ -13,6 +18,10 @@ class Bullet extends Widget
         $this->dataset = array();
     }
 
+    /**
+     * @param $orientation
+     * @return $this
+     */
     public function setOrientation($orientation)
     {
         $this->orientation = $orientation;
@@ -20,14 +29,22 @@ class Bullet extends Widget
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getOrientation()
     {
         return $this->orientation;
     }
 
+    /**
+     * @param $item
+     * @return $this
+     */
     public function setItem($item)
     {
         $this->item = $item;
+
         return $this;
     }
 
@@ -36,6 +53,11 @@ class Bullet extends Widget
         return $this->item;
     }
 
+    /**
+     * Get data in array format
+     *
+     * @return array
+     */
     public function getData()
     {
         return array(

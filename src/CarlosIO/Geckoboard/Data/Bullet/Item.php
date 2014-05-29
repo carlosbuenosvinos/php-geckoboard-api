@@ -1,4 +1,5 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Data\Bullet;
 
 /**
@@ -24,6 +25,7 @@ class Item
      * @var
      */
     protected $range;
+
     /**
      * @var
      */
@@ -31,9 +33,10 @@ class Item
 
     protected $comparative;
 
-    public function setComparative($compartive)
+    public function setComparative($comparative)
     {
-        $this->comparative = $compartive;
+        $this->comparative = $comparative;
+
         return $this;
     }
 
@@ -49,6 +52,7 @@ class Item
     public function setAxisPoint($axisPoint)
     {
         $this->axisPoint = $axisPoint;
+
         return $this;
     }
 
@@ -67,6 +71,7 @@ class Item
     public function setLabel($label)
     {
         $this->label = $label;
+
         return $this;
     }
 
@@ -85,6 +90,7 @@ class Item
     public function setMeasure($measure)
     {
         $this->measure = $measure;
+
         return $this;
     }
 
@@ -103,6 +109,7 @@ class Item
     public function setRange($range)
     {
         $this->range = $range;
+
         return $this;
     }
 
@@ -121,6 +128,7 @@ class Item
     public function setSublabel($sublabel)
     {
         $this->sublabel = $sublabel;
+
         return $this;
     }
 

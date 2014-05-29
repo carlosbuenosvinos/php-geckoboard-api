@@ -1,4 +1,5 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Widgets;
 
 use CarlosIO\Geckoboard\Widgets\Widget;

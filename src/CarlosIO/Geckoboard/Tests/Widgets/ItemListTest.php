@@ -1,18 +1,19 @@
 <?php
-namespace CarlosIO\Geckoboard\Widgets;
 
-use CarlosIO\Geckoboard\Data\ListWidget\Label;
-use CarlosIO\Geckoboard\Data\ListWidget\Title;
+namespace CarlosIO\Geckoboard\Tests\Widgets;
 
-class ListWidgetTest extends \PHPUnit_Framework_TestCase{
+use CarlosIO\Geckoboard\Data\ItemList\Label;
+use CarlosIO\Geckoboard\Data\ItemList\Title;
+use CarlosIO\Geckoboard\Widgets\ItemList;
 
-
+class ItemListTest extends \PHPUnit_Framework_TestCase
+{
     /**
      * @test
      */
-
-    public function can_add_a_single_item(){
-        $widget = new ListWidget();
+    public function canAddSingleItem()
+    {
+        $widget = new ItemList();
 
         $title = new Title();
         $title->setText("Title text");
@@ -30,9 +31,9 @@ class ListWidgetTest extends \PHPUnit_Framework_TestCase{
     /**
      * @test
      */
-
-    public function can_add_multiple_items(){
-        $widget = new ListWidget();
+    public function canAddMultipleItems()
+    {
+        $widget = new ItemList();
 
         $title = new Title();
         $title->setText("Title text");
@@ -55,5 +56,4 @@ class ListWidgetTest extends \PHPUnit_Framework_TestCase{
         $json = json_encode($widget->getData());
         $this->assertEquals('[{"title":{"text":"Title text","highlight":true},"label":{"name":"Label name","color":"red"},"description":"description1"},{"title":{"text":"Title2 text","highlight":false},"label":{"name":"Label2 name","color":"blue"},"description":"description2"}]', $json);
     }
-
-} 
+}

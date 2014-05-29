@@ -1,10 +1,11 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Widgets;
 
 use CarlosIO\Geckoboard\Widgets\Widget;
 
 /**
- * Class LineChart 
+ * Class LineChart
  * @package CarlosIO\Geckoboard\Widgets
  */
 class LineChart extends Widget
@@ -12,7 +13,7 @@ class LineChart extends Widget
     CONST DIMENSION_X = 'x';
     CONST DIMENSION_Y = 'y';
 
-    CONST DEFAULT_COLOUR = "ff9900";   
+    CONST DEFAULT_COLOUR = "ff9900";
 
     /**
      * @var array
@@ -86,7 +87,7 @@ class LineChart extends Widget
       if (!preg_match('/^[a-f0-9]{6}$/i', $colour)) {
         throw new \InvalidArgumentException(sprintf("Value %s must be a valid hex colour", $colour));
       }
-     
+
       $this->colour = $colour;
 
       return $this;
@@ -94,7 +95,7 @@ class LineChart extends Widget
 
     /**
      * Return the colour of the line in the widget
-     * 
+     *
      * @return string
      */
     public function getColour()

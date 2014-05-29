@@ -1,9 +1,9 @@
 <?php
-namespace CarlosIO\Geckoboard\Data\ListWidget;
 
-class Title 
+namespace CarlosIO\Geckoboard\Data\ItemList;
+
+class Title
 {
-
     /**
      * @var string
      */
@@ -24,10 +24,13 @@ class Title
 
     /**
      * @param mixed $highlight
+     * @return $this
      */
     public function setHighlight($highlight)
     {
         $this->highlight = $highlight;
+
+        return $this;
     }
 
     /**
@@ -40,10 +43,13 @@ class Title
 
     /**
      * @param string $text
+     * @return $this
      */
     public function setText($text)
     {
         $this->text = $text;
+
+        return $this;
     }
 
     /**
@@ -56,7 +62,7 @@ class Title
         $result = array();
         $result['text'] = $this->getText();
         $result['highlight'] = $this->getHighlight();
+
         return $result;
     }
-
 }

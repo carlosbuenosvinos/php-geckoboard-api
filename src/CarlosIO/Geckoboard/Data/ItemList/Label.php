@@ -1,9 +1,9 @@
 <?php
-namespace CarlosIO\Geckoboard\Data\ListWidget;
 
-class Label 
+namespace CarlosIO\Geckoboard\Data\ItemList;
+
+class Label
 {
-
     /**
      * @var string
      */
@@ -24,10 +24,13 @@ class Label
 
     /**
      * @param mixed $color
+     * @return $this
      */
     public function setColor($color)
     {
         $this->color = $color;
+
+        return $this;
     }
 
     /**
@@ -40,10 +43,13 @@ class Label
 
     /**
      * @param string $name
+     * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
+        return $this;
     }
 
     /**
@@ -56,6 +62,7 @@ class Label
         $result = array();
         $result['name'] = $this->getName();
         $result['color'] = $this->getColor();
+
         return $result;
     }
-} 
+}
