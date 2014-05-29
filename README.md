@@ -248,6 +248,40 @@ $widget->setAxis(LineChart::DIMENSION_Y, array("bottom", "top"));
 $geckoboardClient->push($widget);
 ```
 
+Widget: List
+============
+[![List](http://cdn2.hubspot.net/hub/326854/file-374648282-png/images/list_2x2.png?t=1383907610000)](http://www.geckoboard.com/developers/custom-widgets/widget-types/list)
+
+```php
+use CarlosIO\Geckoboard\Data\ItemList\Label;
+use CarlosIO\Geckoboard\Data\ItemList\Title;
+use CarlosIO\Geckoboard\Widgets\ItemList;
+
+$widget = new ItemList();
+$widget->setId('<your widget id>');
+
+$title = new Title();
+$title->setText("Title text");
+$title->setHighlight(true);
+
+$title2 = new Title();
+$title2->setText("Title2 text");
+$title2->setHighlight(false);
+
+$label = new Label();
+$label->setName("Label name");
+$label->setColor("red");
+
+$label2 = new Label();
+$label2->setName("Label2 name");
+$label2->setColor("blue");
+
+$widget->addItem($title, $label, 'description1');
+$widget->addItem($title2, $label2, 'description2');
+
+$geckoboardClient->push($widget);
+```
+
 Push more than one widget at the same time
 ===========================================
 
