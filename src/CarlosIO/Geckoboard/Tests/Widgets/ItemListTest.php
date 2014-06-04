@@ -11,6 +11,17 @@ class ItemListTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function getDataWithNoItems()
+    {
+        $widget = new ItemList();
+
+        $json = json_encode($widget->getData());
+        $this->assertEquals('[{"title":[]},{"label":[]},{"description":""}]', $json);
+    }
+
+    /**
+     * @test
+     */
     public function canAddSingleItem()
     {
         $widget = new ItemList();

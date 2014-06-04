@@ -32,28 +32,4 @@ class ItemList extends Widget
 
         return $this->items;
     }
-
-    /**
-     * @return array
-     */
-    public function getLabels()
-    {
-        return $this->labels;
-    }
-
-    /**
-     * @return array
-     */
-    public function getTitles()
-    {
-        return $this->titles;
-    }
-
-    /**
-     * @return array
-     */
-    public function getDescriptions()
-    {
-        return $this->descriptions;
-    }
 }
