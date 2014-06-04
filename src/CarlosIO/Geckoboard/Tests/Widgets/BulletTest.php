@@ -33,17 +33,17 @@ class BulletTest extends \PHPUnit_Framework_TestCase
 
         $myBullet->setItem($item);
 
-        $expectedData = [
+        $expectedData = array(
             'orientation' => 'horizontal',
-            'item' => [
+            'item' => array(
                 'label' => $item->getLabel(),
                 'sublabel' => $item->getSublabel(),
-                'axis' => ['point' => $item->getAxisPoint()],
+                'axis' => array('point' => $item->getAxisPoint()),
                 'range' => $item->getRange(),
                 'measure' => $item->getMeasure(),
-                'comparative' => ['point' => $item->getComparative()],
-            ]
-        ];
+                'comparative' => array('point' => $item->getComparative()),
+            )
+        );
 
         $this->assertEquals($expectedData, $myBullet->getData());
     }

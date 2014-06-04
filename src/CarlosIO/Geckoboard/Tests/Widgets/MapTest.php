@@ -11,7 +11,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     {
         $myMap = new Map();
 
-        $this->assertSame([], $myMap->getPoints());
+        $this->assertSame(array(), $myMap->getPoints());
     }
 
     public function testGetDataWithOneEmptyPoint()
@@ -22,7 +22,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
         $myMap->addPoint($point1);
 
-        $expectedResult = ['points' => ['point' => [[]]]];
+        $expectedResult = array('points' => array('point' => array(array())));
 
         $this->assertSame($expectedResult, $myMap->getData());
     }
@@ -46,22 +46,28 @@ class MapTest extends \PHPUnit_Framework_TestCase
         $myMap->addPoint($point1);
         $myMap->addPoint($point2);
 
-        $expectedResult = ['points' =>
-            ['point' =>
-                [
-                    [
-                        'city' => ['city_name' => $point1->getCityName(), 'country_code' => $point1->getCountryCode()],
+        $expectedResult = array(
+            'points' => array(
+                'point' => array(
+                    array(
+                        'city' => array(
+                            'city_name' => $point1->getCityName(),
+                            'country_code' => $point1->getCountryCode()
+                        ),
                         'size' => $point1->getSize(),
                         'color' => $point1->getColor(),
-                    ],
-                    [
-                        'city' => ['city_name' => $point2->getCityName(), 'country_code' => $point2->getCountryCode()],
+                    ),
+                    array(
+                        'city' => array(
+                            'city_name' => $point2->getCityName(),
+                            'country_code' => $point2->getCountryCode()
+                        ),
                         'size' => $point2->getSize(),
                         'color' => $point2->getColor(),
-                    ],
-                ]
-            ]
-        ];
+                    ),
+                )
+            )
+        );
 
         $this->assertSame($expectedResult, $myMap->getData());
     }
