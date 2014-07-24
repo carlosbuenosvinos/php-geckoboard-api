@@ -195,6 +195,36 @@ $widget->addEntry($error);
 $geckoboardClient->push($widget);
 ```
 
+Widget: PieChart
+==============
+[![PieChart](https://d2s28ygc2k7998.cloudfront.net/widget_thumbs_new/piechart.png)](https://developer.geckoboard.com/#pie-chart)
+
+```php
+use CarlosIO\Geckoboard\Data\PieChart\Entry;
+use CarlosIO\Geckoboard\Widgets\PieChart;
+
+$widget = new PieChart();
+$widget->setId('<your widget id>');
+
+$entry = new Entry();
+$entry->setLabel('May')->setValue(100)->setColor('ffff10');
+$widget->addEntry($entry);
+
+$entry = new Entry();
+$entry->setLabel('June')->setValue(160)->setColor('ffaa0a');
+$widget->addEntry($entry);
+
+$entry = new Entry();
+$entry->setLabel('July')->setValue(300)->setColor('ff5505');
+$widget->addEntry($entry);
+
+$entry = new Entry();
+$entry->setLabel('August')->setValue(140)->setColor('ff0000');
+$widget->addEntry($entry);
+
+$geckoboardClient->push($widget);
+```
+
 Widget: Geck-o-Meter
 ==================
 [![Geck-o-Meter](http://cdn2.hubspot.net/hub/326854/file-373966356-png/images/Geck-O-Meter-1.png?t=1383906792000)](http://www.geckoboard.com/developers/custom-widgets/widget-types/geck-o-meter)
