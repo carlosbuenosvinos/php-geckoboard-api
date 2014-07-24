@@ -76,7 +76,7 @@ class Client
      */
     private function getWidgetsArray($widget)
     {
-        $widgets = array();
+        $widgets = $widget;
         if (!is_array($widget)) {
             $widgets = array($widget);
         }

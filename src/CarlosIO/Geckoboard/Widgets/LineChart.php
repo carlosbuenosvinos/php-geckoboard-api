@@ -100,24 +100,27 @@ class LineChart extends Widget
      */
     public function getColour()
     {
-      if (null === $this->colour) {
-        $this->colour = self::DEFAULT_COLOUR;
-      }
+        if (null === $this->colour) {
+            $this->colour = self::DEFAULT_COLOUR;
+        }
 
-      return $this->colour;
+        return $this->colour;
     }
 
     /**
      * Set the elements to appear evenly spread along dimension
      *
      * @param string $dimension The dimension where labels will be displayed
-     * @param array  $labels    Labels displayed in this axis
+     * @param array $labels Labels displayed in this axis
+     * @return $this
      */
     public function setAxis($dimension, $labels)
     {
-      foreach($labels as $label) {
-        $this->addLabel($dimension, $label);
-      }
+        foreach($labels as $label) {
+            $this->addLabel($dimension, $label);
+        }
+
+        return $this;
     }
 
     /**
