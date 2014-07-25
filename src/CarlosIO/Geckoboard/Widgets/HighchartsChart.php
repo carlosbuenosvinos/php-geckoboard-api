@@ -1,10 +1,8 @@
 <?php
 namespace CarlosIO\Geckoboard\Widgets;
 
-use CarlosIO\Geckoboard\Widgets\Widget;
-
 /**
- * Class LineChart 
+ * Class LineChart
  * @package CarlosIO\Geckoboard\Widgets
  */
 class HighchartsChart extends Widget
@@ -36,11 +34,13 @@ class HighchartsChart extends Widget
 
     /**
      * @param array $series
+     *
      * @return $this
      */
     public function setSeries($series)
     {
         $this->series = $series;
+
         return $this;
     }
 
@@ -54,11 +54,13 @@ class HighchartsChart extends Widget
 
     /**
      * @param mixed $subtitle
+     *
      * @return $this
      */
     public function setSubtitle($subtitle)
     {
         $this->subtitle = $subtitle;
+
         return $this;
     }
 
@@ -72,11 +74,13 @@ class HighchartsChart extends Widget
 
     /**
      * @param mixed $title
+     *
      * @return $this
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -90,11 +94,13 @@ class HighchartsChart extends Widget
 
     /**
      * @param mixed $type
+     *
      * @return $this
      */
     public function setType($type)
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -108,11 +114,13 @@ class HighchartsChart extends Widget
 
     /**
      * @param array $xAxisLabels
+     *
      * @return $this
      */
     public function setXAxisLabels($xAxisLabels)
     {
         $this->xAxisLabels = $xAxisLabels;
+
         return $this;
     }
 
@@ -126,11 +134,13 @@ class HighchartsChart extends Widget
 
     /**
      * @param mixed $xAxisTitle
+     *
      * @return $this
      */
     public function setXAxisTitle($xAxisTitle)
     {
         $this->xAxisTitle = $xAxisTitle;
+
         return $this;
     }
 
@@ -144,11 +154,13 @@ class HighchartsChart extends Widget
 
     /**
      * @param array $yAxisLabels
+     *
      * @return $this
      */
     public function setYAxisLabels($yAxisLabels)
     {
         $this->yAxisLabels = $yAxisLabels;
+
         return $this;
     }
 
@@ -162,11 +174,13 @@ class HighchartsChart extends Widget
 
     /**
      * @param mixed $yAxisTitle
+     *
      * @return $this
      */
     public function setYAxisTitle($yAxisTitle)
     {
         $this->yAxisTitle = $yAxisTitle;
+
         return $this;
     }
 
@@ -218,17 +232,18 @@ class HighchartsChart extends Widget
 
         $returnValues['plotOptions'] = array(
             'line' => array(
-                'dataLabels' => array (
+                'dataLabels' => array(
                     'enabled' => true
                 ),
                 'enableMouseTracking' => false
             )
         );
 
-        foreach($this->getSeries() as $serieName => $serieValues) {
-            $serieData = array (
-                'name' => $serieName,
-                'data' => $serieValues
+        foreach ($this->getSeries() as $serieName => $serieValues) {
+            $serieData = array(
+                'name' => (isset($serieValues['name']) && $serieValues['name']) ? $serieValues['name'] : $serieName,
+                'data' => (isset($serieValues['data']) && $serieValues['data']) ? $serieValues['data'] : $serieValues,
+                'type' => (isset($serieValues['type']) && $serieValues['type']) ? $serieValues['type'] : 'line',
             );
 
             $returnValues['series'][] = $serieData;
