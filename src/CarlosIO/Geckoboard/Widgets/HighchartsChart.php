@@ -241,9 +241,9 @@ class HighchartsChart extends Widget
 
         foreach ($this->getSeries() as $serieName => $serieValues) {
             $serieData = array(
-                'name' => ($serieValues['name']) ? $serieValues['name'] : $serieName,
-                'data' => ($serieValues['data']) ? $serieValues['data'] : $serieValues,
-                'type' => ($serieValues['type']) ? $serieValues['type'] : '',
+                'name' => (isset($serieValues['name']) && $serieValues['name']) ? $serieValues['name'] : $serieName,
+                'data' => (isset($serieValues['data']) && $serieValues['data']) ? $serieValues['data'] : $serieValues,
+                'type' => (isset($serieValues['type']) && $serieValues['type']) ? $serieValues['type'] : 'line',
             );
 
             $returnValues['series'][] = $serieData;
