@@ -13,7 +13,7 @@ The best way to install the library is by using [Composer](http://getcomposer.or
 ``` javascript
 {
     "require": {
-        "carlosio/geckoboard": "1.0.4"
+        "carlosio/geckoboard": "1.0.5"
     }
 }
 ```
