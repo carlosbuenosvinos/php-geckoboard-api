@@ -48,4 +48,37 @@ class NumberAndSecondaryStatTest extends \PHPUnit_Framework_TestCase
         $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[{"text":"","value":100}],"type":"reverse"}', $json);
     }
+
+    public function testSetGetMainText()
+    {
+        $text = 'text';
+        $widget = new NumberAndSecondaryStat();
+        $widget->setMainText($text);
+
+        $this->assertSame($text, $widget->getMainText());
+        $data = $widget->getData();
+        $this->assertSame($text, $data['item'][0]['text']);
+    }
+
+    public function testSetGetSecondaryText()
+    {
+        $text = 'text';
+        $widget = new NumberAndSecondaryStat();
+        $widget->setSecondaryValue(1);
+        $widget->setSecondaryText($text);
+
+        $this->assertSame($text, $widget->getSecondaryText());
+        $data = $widget->getData();
+        $this->assertSame($text, $data['item'][1]['text']);
+    }
+
+    public function testAbsolute()
+    {
+        $widget = new NumberAndSecondaryStat();
+        $widget->setAbsolute(true);
+
+        $data = $widget->getData();
+
+        $this->assertTrue($data['absolute']);
+    }
 }
