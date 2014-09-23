@@ -22,14 +22,6 @@ class ItemList extends Widget
      */
     public function getData()
     {
-        if (count($this->items) > 0){
-            return $this->items;
-        }
-
-        $this->items[]['title'] = array();
-        $this->items[]['label'] = array();
-        $this->items[]['description'] = '';
-
         return $this->items;
     }
 }
