@@ -16,7 +16,7 @@ class ItemListTest extends \PHPUnit_Framework_TestCase
         $widget = new ItemList();
 
         $json = json_encode($widget->getData());
-        $this->assertEquals('[{"title":[]},{"label":[]},{"description":""}]', $json);
+        $this->assertEquals('[]', $json);
     }
 
     /**
