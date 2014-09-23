@@ -7,7 +7,7 @@ use CarlosIO\Geckoboard\Data\ItemList\Title;
 
 class ItemList extends Widget
 {
-    protected $items;
+    protected $items = array();
 
     public function addItem(Title $title, Label $label, $description)
     {
