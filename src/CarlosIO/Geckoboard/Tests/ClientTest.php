@@ -3,7 +3,6 @@
 namespace CarlosIO\Geckoboard\Tests;
 
 use CarlosIO\Geckoboard\Client as Geckoboard;
-use CarlosIO\Geckoboard\Tests\DummyClient;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {

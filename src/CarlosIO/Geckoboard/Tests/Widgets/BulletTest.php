@@ -3,7 +3,6 @@
 namespace CarlosIO\Geckoboard\Tests\Widgets;
 
 use CarlosIO\Geckoboard\Data\Bullet\Item;
-use CarlosIO\Geckoboard\Data\Funnel\Entry;
 use CarlosIO\Geckoboard\Widgets\Bullet;
 
 class BulletTest extends \PHPUnit_Framework_TestCase

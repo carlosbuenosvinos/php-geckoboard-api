@@ -2,7 +2,6 @@
 
 namespace CarlosIO\Geckoboard\Widgets;
 
-use CarlosIO\Geckoboard\Widgets\Widget;
 use CarlosIO\Geckoboard\Data\Point;
 
 /**
@@ -16,9 +15,6 @@ class Map extends Widget
      */
     protected $dataset;
 
-    /**
-     *
-     */
     public function __construct()
     {
         $this->dataset = array();

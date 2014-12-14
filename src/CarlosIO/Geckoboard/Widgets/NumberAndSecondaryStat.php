@@ -2,8 +2,6 @@
 
 namespace CarlosIO\Geckoboard\Widgets;
 
-use CarlosIO\Geckoboard\Widgets\Widget;
-
 /**
  * Class NumberAndSecondaryStat
  * @package CarlosIO\Geckoboard\Widgets
@@ -163,6 +161,7 @@ class NumberAndSecondaryStat extends Widget
 
     /**
      * @param string|null $prefix
+     * @return $this
      */
     public function setType($prefix)
     {
@@ -189,6 +188,7 @@ class NumberAndSecondaryStat extends Widget
     public function setAbsolute($absolute)
     {
         $this->absolute = $absolute;
+
         return $this;
     }
 

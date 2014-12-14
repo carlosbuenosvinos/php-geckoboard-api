@@ -2,8 +2,6 @@
 
 namespace CarlosIO\Geckoboard\Widgets;
 
-use CarlosIO\Geckoboard\Widgets\Widget;
-
 /**
  * Class LineChart
  * @package CarlosIO\Geckoboard\Widgets
@@ -39,7 +37,7 @@ class LineChart extends Widget
     public function setItems(array $items)
     {
         foreach ($items as $item) {
-          $this->addItem($item);
+            $this->addItem($item);
         }
 
         return $this;
@@ -68,7 +66,7 @@ class LineChart extends Widget
     public function addItem($item)
     {
         if (!is_numeric($item)) {
-          throw new \InvalidArgumentException(sprintf("Value '%s' must be a numeric value", $item));
+            throw new \InvalidArgumentException(sprintf("Value '%s' must be a numeric value", $item));
         }
 
         $this->items[] = $item;
