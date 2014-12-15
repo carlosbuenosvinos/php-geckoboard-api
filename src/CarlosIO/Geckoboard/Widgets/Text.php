@@ -2,7 +2,6 @@
 
 namespace CarlosIO\Geckoboard\Widgets;
 
-use CarlosIO\Geckoboard\Widgets\Widget;
 use CarlosIO\Geckoboard\Data\Text\Item;
 
 /**

@@ -3,7 +3,6 @@
 namespace CarlosIO\Geckoboard\Tests\Widgets;
 
 use CarlosIO\Geckoboard\Data\Entry;
-use CarlosIO\Geckoboard\Widgets\RagNumbers;
 
 class RagNumbersTest extends \PHPUnit_Framework_TestCase
 {

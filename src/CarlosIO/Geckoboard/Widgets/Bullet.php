@@ -2,8 +2,6 @@
 
 namespace CarlosIO\Geckoboard\Widgets;
 
-use CarlosIO\Geckoboard\Widgets\Widget;
-
 /**
  * Class Bullet
  * @package CarlosIO\Geckoboard\Widgets

@@ -2,8 +2,6 @@
 
 namespace CarlosIO\Geckoboard\Widgets;
 
-use CarlosIO\Geckoboard\Widgets\RagNumbers;
-
 /**
  * Class RagColumnAndNumbers
  * @package CarlosIO\Geckoboard\Widgets

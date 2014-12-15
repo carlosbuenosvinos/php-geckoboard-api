@@ -2,7 +2,6 @@
 
 namespace CarlosIO\Geckoboard\Widgets;
 
-use CarlosIO\Geckoboard\Widgets\Widget;
 use CarlosIO\Geckoboard\Data\Entry;
 
 /**
@@ -14,6 +13,11 @@ class GeckoMeter extends Widget
     protected $dataset;
     protected $value;
     protected $reversed = false;
+
+    public function __construct()
+    {
+        $this->dataset = array();
+    }
 
     public function setReversed($reversed)
     {
@@ -27,19 +31,20 @@ class GeckoMeter extends Widget
         return $this->reversed;
     }
 
+    /**
+     * @param $value
+     * @return $this
+     */
     public function setValue($value)
     {
         $this->value = $value;
+
+        return $this;
     }
 
     public function getValue()
     {
         return $this->value;
-    }
-
-    public function __construct()
-    {
-        $this->dataset = array();
     }
 
     public function getMinData()
