@@ -24,6 +24,18 @@ class Client
     protected $api;
 
     /**
+     * @desc    Proxy FQDN
+     * @var     string
+     */
+    protected $sProxyHost = null;
+
+    /**
+     * @desc    Proxy Port
+     * @var     integer
+     */
+    protected $iProxyPort = null;
+
+    /**
      * Construct a new Geckoboard Client
      */
     public function __construct()
@@ -99,6 +111,12 @@ class Client
      */
     private function pushWidget($widget)
     {
+    	$aOptions = array();
+    	if (true === $this->isProxyfied()) {
+
+    		$aOptions['proxy'] = 'tcp://'.$this->getProxyHost().':'.$this->getProxyPort();
+    	}
+
         $this->client->post(
             '/v1/send/'.$widget->getId(),
             null,
@@ -107,6 +125,63 @@ class Client
                     'api_key' => $this->getApiKey(),
                     'data' => $widget->getData()
                 )
-            ))->send();
+            ),
+        	$aOptions)->send();
+    }
+
+    /**
+     * @desc    return true if the call to gecko should be proxyfied or false if not.
+     * @return  boolean
+     */
+    public function isProxyfied()
+    {
+    	$iPort = $this->getProxyPort();
+    	$sHost = $this->getProxyHost();
+    	return (false === empty($iPort) && false === is_null($sHost) && $iPort > 0);
+    }
+
+    /**
+     * @desc    setter for proxy hostname
+     * @param    string $sProxyHost
+     * @return $this
+     */
+    public function setProxyHost($sProxyHost)
+    {
+    	if (true === is_string($sProxyHost) && false === empty($sProxyHost)) {
+    		$this->sProxyHost = $sProxyHost;
+    	}
+
+    	return $this;
+    }
+
+    /**
+     * @desc    getter for proxy hostname
+     * @return    string
+     */
+    public function getProxyHost()
+    {
+    	return $this->sProxyHost;
+    }
+
+    /**
+     * @desc    setter for proxy port
+     * @param    integer $iProxyPort
+     */
+    public function setProxyPort($iProxyPort)
+    {
+    	if (true === is_integer($iProxyPort) && $iProxyPort >= 0) {
+    		$this->iProxyPort = intval($iProxyPort);
+    	}
+
+    	return $this;
+    }
+
+    /**
+     * @desc    getter for proxy port
+     * @return    integer
+     */
+    public function getProxyPort()
+    {
+    	return $this->iProxyPort;
     }
 }

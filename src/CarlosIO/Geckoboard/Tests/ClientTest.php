@@ -10,6 +10,10 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     {
         $client = new Geckoboard();
         $this->assertSame('foo', $client->setApiKey('foo')->getApiKey());
+        $this->assertSame(false, $client->isProxyfied());
+        $this->assertSame('www.google.fr', $client->setProxyHost('www.google.fr')->getProxyHost());
+        $this->assertSame(42, $client->setProxyPort(42)->getProxyPort());
+        $this->assertSame(true, $client->isProxyfied());
     }
 
     public function testClient()
