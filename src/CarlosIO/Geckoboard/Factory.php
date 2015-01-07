@@ -24,86 +24,86 @@ class Factory
 
     /**
      * @desc    identifier for BulletGraph widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_BULLET	= 0;
+    const WIDGET_BULLET    = 0;
 
     /**
      * @desc    identifier for funnel widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_FUNNEL	= 1;
+    const WIDGET_FUNNEL    = 1;
 
     /**
      * @desc    identifier for geckometer widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_GECKOMETER	= 2;
+    const WIDGET_GECKOMETER    = 2;
 
     /**
      * @desc    identifier for highCharts widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_HIGHCHARTS	= 3;
+    const WIDGET_HIGHCHARTS    = 3;
 
     /**
      * @desc    identifier for leaderBoard widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_LEADERBOARD	= 4;
+    const WIDGET_LEADERBOARD    = 4;
 
     /**
      * @desc    identifier for LineChart widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_LINE_CHART	= 5;
+    const WIDGET_LINE_CHART    = 5;
 
     /**
      * @desc    identifier for List widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_LIST	= 6;
+    const WIDGET_LIST    = 6;
 
     /**
      * @desc    identifier for Map widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_MAP	= 7;
+    const WIDGET_MAP    = 7;
 
     /**
      * @desc    identifier for monitoring widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_MONITORING	= 8;
+    const WIDGET_MONITORING    = 8;
 
     /**
      * @desc    identifier for Number And Secondary Stats widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_NUMBER_AND_SECONDARY_STATS	= 9;
+    const WIDGET_NUMBER_AND_SECONDARY_STATS    = 9;
 
     /**
      * @desc    identifier for Pie Chart widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_PIE_CHART	= 10;
+    const WIDGET_PIE_CHART    = 10;
 
     /**
      * @desc    identifier for RAG widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_RAG	= 11;
+    const WIDGET_RAG    = 11;
 
     /**
      * @desc    identifier for text widget
-     * @var		integer
+     * @var        integer
      */
-    const WIDGET_TEXT	= 12;
+    const WIDGET_TEXT    = 12;
 
     /**
      * @desc    create a gecko Client object
-     * @param	string $sAPIKey : Gecko API key attached to account
-     * @return	\CarlosIO\Geckoboard\Client
+     * @param    string $sAPIKey : Gecko API key attached to account
+     * @return    \CarlosIO\Geckoboard\Client
      */
     public static function createGeckoClient($sAPIKey)
     {
@@ -116,10 +116,10 @@ class Factory
 
     /**
      * @desc    create a widget from it's TypeId and widget id attached to dashboard
-     * @param	integer $iWidgetTypeId
-     * @param	string $sWidgetId
-     * @throws	InvalidDataException
-     * @return	\CarlosIO\Geckoboard\Widgets\Widget
+     * @param    integer $iWidgetTypeId
+     * @param    string $sWidgetId
+     * @throws    InvalidDataException
+     * @return    \CarlosIO\Geckoboard\Widgets\Widget
      */
     public static function createGeckoWidget($iWidgetTypeId, $sWidgetId)
     {
@@ -128,9 +128,9 @@ class Factory
         }
 
         switch($iWidgetTypeId) {
-        	case self::WIDGET_BULLET:
-        		$oWidget	= self::createBulletWidget($sWidgetId);
-        		break;
+            case self::WIDGET_BULLET:
+                $oWidget    = self::createBulletWidget($sWidgetId);
+                break;
             case self::WIDGET_FUNNEL:
                 $oWidget    = self::createFunnelWidget($sWidgetId);
                 break;
@@ -141,24 +141,24 @@ class Factory
                 $oWidget    = self::createHighChartsWidget($sWidgetId);
                 break;
             case self::WIDGET_LEADERBOARD:
-            	throw new InvalidDataException('Non implemented widget type');
+                throw new InvalidDataException('Non implemented widget type');
             case self::WIDGET_LINE_CHART:
-            	$oWidget	= self::createLineChartWidget($sWidgetId);
-            	break;
+                $oWidget    = self::createLineChartWidget($sWidgetId);
+                break;
             case self::WIDGET_LIST:
-            	$oWidget	= self::createItemListWidget($sWidgetId);
-            	break;
+                $oWidget    = self::createItemListWidget($sWidgetId);
+                break;
             case self::WIDGET_MAP:
-            	$oWidget	= self::createMapWidget($sWidgetId);
-            	break;
+                $oWidget    = self::createMapWidget($sWidgetId);
+                break;
             case self::WIDGET_MONITORING:
-            	throw new InvalidDataException('Non implemented widget type');
+                throw new InvalidDataException('Non implemented widget type');
             case self::WIDGET_NUMBER_AND_SECONDARY_STATS:
-            	$oWidget	= self::createNumberAndSecondaryStatWidget($sWidgetId);
-            	break;
+                $oWidget    = self::createNumberAndSecondaryStatWidget($sWidgetId);
+                break;
             case self::WIDGET_PIE_CHART:
-            	$oWidget	= self::createPieChartWidget($sWidgetId);
-            	break;
+                $oWidget    = self::createPieChartWidget($sWidgetId);
+                break;
             case self::WIDGET_RAG:
                 $oWidget    = self::createRAGWidget($sWidgetId);
                 break;
@@ -173,145 +173,145 @@ class Factory
     }
 
     /**
-     * @desc	create an instance of Funnel Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\Funnel
+     * @desc    create an instance of Funnel Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\Funnel
      */
     public static function createFunnelWidget($sWidgetId)
     {
-    	$oWidget = new Funnel();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new Funnel();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of Bullet Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\Bullet
+     * @desc    create an instance of Bullet Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\Bullet
      */
     public static function createBulletWidget($sWidgetId)
     {
-    	$oWidget = new Bullet();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new Bullet();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of Map Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\Map
+     * @desc    create an instance of Map Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\Map
      */
     public static function createMapWidget($sWidgetId)
     {
-    	$oWidget = new Map();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new Map();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of LineChart Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\LineChart
+     * @desc    create an instance of LineChart Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\LineChart
      */
     public static function createLineChartWidget($sWidgetId)
     {
-    	$oWidget = new LineChart();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new LineChart();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of PieChart Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\PieChart
+     * @desc    create an instance of PieChart Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\PieChart
      */
     public static function createPieChartWidget($sWidgetId)
     {
-    	$oWidget = new PieChart();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new PieChart();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of GeckOMeter Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\GeckoMeter
+     * @desc    create an instance of GeckOMeter Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\GeckoMeter
      */
     public static function createGeckOMeterWidget($sWidgetId)
     {
-    	$oWidget = new GeckoMeter();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new GeckoMeter();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of HighCharts Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\HighchartsChart
+     * @desc    create an instance of HighCharts Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\HighchartsChart
      */
     public static function createHighChartsWidget($sWidgetId)
     {
-    	$oWidget = new HighchartsChart();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new HighchartsChart();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of RAG Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\RagColumnAndNumbers
+     * @desc    create an instance of RAG Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\RagColumnAndNumbers
      */
     public static function createRAGWidget($sWidgetId)
     {
-    	$oWidget = new RagColumnAndNumbers();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new RagColumnAndNumbers();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of Text Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\Text
+     * @desc    create an instance of Text Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\Text
      */
     public static function createTextWidget($sWidgetId)
     {
-    	$oWidget = new Text();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new Text();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of Item List Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\ItemList
+     * @desc    create an instance of Item List Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\ItemList
      */
     public static function createItemListWidget($sWidgetId)
     {
-    	$oWidget = new ItemList();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new ItemList();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 
     /**
-     * @desc	create an instance of Number And Secondary Stat Widget
-     * @param	string $sWidgetId
-     * @return	\CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat
+     * @desc    create an instance of Number And Secondary Stat Widget
+     * @param    string $sWidgetId
+     * @return    \CarlosIO\Geckoboard\Widgets\NumberAndSecondaryStat
      */
     public function createNumberAndSecondaryStatWidget($sWidgetId)
     {
-    	$oWidget = new NumberAndSecondaryStat();
-    	$oWidget->setId($sWidgetId);
+        $oWidget = new NumberAndSecondaryStat();
+        $oWidget->setId($sWidgetId);
 
-    	return $oWidget;
+        return $oWidget;
     }
 }

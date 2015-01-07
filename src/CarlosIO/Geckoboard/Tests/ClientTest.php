@@ -124,14 +124,14 @@ class ClientTest extends \Guzzle\Tests\GuzzleTestCase
 
     public function validHttpClientProvider()
     {
-    	return array(
+        return array(
             array(new \Guzzle\Http\Client()),
         );
     }
 
     public function invalidHttpClientProvider()
     {
-    	return array(
+        return array(
             array(array()),
             array(null),
             array(new \stdClass()),
@@ -173,9 +173,9 @@ class ClientTest extends \Guzzle\Tests\GuzzleTestCase
      */
     public function testHttpClient($oHttpClient)
     {
-    	$oClient = new Client('https://test.foobar.net', '00000000000000');
-    	$oClient->setHTTPClient($oHttpClient);
-    	$this->assertEquals($oHttpClient, $oClient->getHTTPClient());
+        $oClient = new Client('https://test.foobar.net', '00000000000000');
+        $oClient->setHTTPClient($oHttpClient);
+        $this->assertEquals($oHttpClient, $oClient->getHTTPClient());
     }
 
     /**
@@ -184,8 +184,8 @@ class ClientTest extends \Guzzle\Tests\GuzzleTestCase
      */
     public function testInvalidHttpClient($oHttpClient)
     {
-    	$oClient = new Client('https://test.foobar.net', '00000000000000');
-    	$oClient->setHTTPClient($oHttpClient);
+        $oClient = new Client('https://test.foobar.net', '00000000000000');
+        $oClient->setHTTPClient($oHttpClient);
     }
 
     /**
