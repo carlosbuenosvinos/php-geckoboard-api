@@ -19,7 +19,7 @@ class Monitoring extends Widget
     /**
      * @var string
      */
-    protected $downtime;
+    protected $downTime;
 
     /**
      * @var string
@@ -46,9 +46,9 @@ class Monitoring extends Widget
      * @param $downtime
      * @return $this
      */
-    public function setDowntime($downtime)
+    public function setDownTime($downtime)
     {
-        $this->downtime = $downtime;
+        $this->downTime = $downtime;
 
         return $this;
     }
@@ -75,9 +75,9 @@ class Monitoring extends Widget
     /**
      * @return string
      */
-    public function getDowntime()
+    public function getDownTime()
     {
-        return $this->downtime;
+        return $this->downTime;
     }
 
     /**
@@ -95,7 +95,7 @@ class Monitoring extends Widget
     {
         return array(
             'status'  => $this->getStatus(),
-            'downTime'  => $this->getDowntime(),
+            'downTime'  => $this->getDownTime(),
             'responseTime' => $this->getResponseTime()
         );
     }

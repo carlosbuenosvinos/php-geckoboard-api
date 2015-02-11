@@ -24,7 +24,7 @@ class MonitoringTest extends \PHPUnit_Framework_TestCase
     {
         $this->myMonitoringWidget
             ->setStatus('Up')
-            ->setDowntime('9 days ago')
+            ->setDownTime('9 days ago')
             ->setResponseTime('593 ms');
 
         $json = json_encode($this->myMonitoringWidget->getData());
