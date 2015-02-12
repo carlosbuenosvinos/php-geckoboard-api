@@ -8,8 +8,8 @@ namespace CarlosIO\Geckoboard\Widgets;
  */
 class Monitoring extends Widget
 {
-    CONST STATUS_UP     = 'Up';
-    CONST STATUS_DOWN   = 'Down';
+    const STATUS_UP     = 'Up';
+    const STATUS_DOWN   = 'Down';
 
     /**
      * @var string
