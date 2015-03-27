@@ -354,6 +354,20 @@ $geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
+Widget: Monitoring
+==================
+![Monitoring](https://developer.geckoboard.com/images/monitoring-5641d6ed.png)
+
+```php
+$widget = (new Monitoring())
+    ->setId('<your widget id>')
+    ->setStatus('Up')
+    ->setDownTime('3 days ago')
+    ->setResponseTime('100 ms');
+
+$geckoboardClient()->push($widget);
+```
+
 Push more than one widget at the same time
 ===========================================
 
