@@ -13,7 +13,7 @@ The best way to install the library is by using [Composer](http://getcomposer.or
 ``` javascript
 {
     "require": {
-        "carlosio/geckoboard": "1.*"
+        "carlosio/geckoboard": "~2.0"
     }
 }
 ```
@@ -42,8 +42,23 @@ $widget->setMainValue(123);
 $widget->setSecondaryValue(238);
 $widget->setMainPrefix('EUR');
 
-$geckoboardClient = new Client();
-$geckoboardClient->setApiKey('<your token>');
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
+$geckoboardClient->push($widget);
+```
+
+```php
+require __DIR__ . '/vendor/autoload.php';
+
+use CarlosIO\Geckoboard\Factory;
+
+$widget = new Factory::createNumberAndSecondaryStatWidget('<your widget id>');
+$widget->setMainValue(123);
+$widget->setSecondaryValue(238);
+$widget->setMainPrefix('EUR');
+
+$geckoboardClient = Factory::createGeckoClient('<your token>');
 $geckoboardClient->push($widget);
 ```
 
@@ -61,8 +76,9 @@ $widget->setMainValue(123);
 $widget->setSecondaryValue(238);
 $widget->setMainPrefix('EUR');
 
-$geckoboardClient = new Client();
-$geckoboardClient->setApiKey('<your token>');
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
@@ -90,6 +106,9 @@ $greenData = new Entry();
 $greenData->setValue(34)->setText('This is the green description');
 $widget->setGreenData($greenData);
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
@@ -117,6 +136,9 @@ $greenData = new Entry();
 $greenData->setValue(3)->setText('This is the green description');
 $widget->setGreenData($greenData);
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
@@ -143,6 +165,9 @@ $secondItem->setType(Item::TYPE_ALERT);
 $widget->addItem($firstItem);
 $widget->addItem($secondItem);
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
@@ -191,6 +216,9 @@ $error = new Entry();
 $error->setLabel('Step 8')->setValue(2323);
 $widget->addEntry($error);
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
@@ -221,6 +249,9 @@ $entry = new Entry();
 $entry->setLabel('August')->setValue(140)->setColor('ff0000');
 $widget->addEntry($entry);
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
@@ -239,6 +270,9 @@ $widget->setMinData((new Entry())->setValue(0));
 $widget->setMaxData((new Entry())->setValue(100));
 $widget->setValue($data);
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
@@ -257,6 +291,9 @@ $point = new Point();
 $point->setSize(10)->setColor('FF0000')->setLatitude('40.416775')->setLongitude('-3.70379');
 $widget->addPoint($point);
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
@@ -274,6 +311,9 @@ $widget->setColour("ff0000");
 $widget->setAxis(LineChart::DIMENSION_X, array("min", "max"));
 $widget->setAxis(LineChart::DIMENSION_Y, array("bottom", "top"));
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
 ```
 
@@ -308,21 +348,10 @@ $label2->setColor("blue");
 $widget->addItem($title, $label, 'description1');
 $widget->addItem($title2, $label2, 'description2');
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widget);
-```
-
-Widget: Monitoring
-==================
-![Monitoring](https://developer.geckoboard.com/images/monitoring-5641d6ed.png)
-
-```php
-$widget = (new Monitoring())
-    ->setId('<your widget id>')
-    ->setStatus('Up')
-    ->setDownTime('3 days ago')
-    ->setResponseTime('100 ms');
-
-$geckoboardClient()->push($widget);
 ```
 
 Push more than one widget at the same time
@@ -338,6 +367,9 @@ $widget = new Map();
 // Fill your map...
 $widgets[] = $widget;
 
+$geckoboardClient = new Client('https://push.geckoboard.com/v1/send', '<your token>');
+$HTTPclient = new \Guzzle\Http\Client();
+$geckoboardClient->setHTTPClient($HTTPclient);
 $geckoboardClient->push($widgets);
 ```
 

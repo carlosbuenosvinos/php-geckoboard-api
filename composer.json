@@ -1,31 +1,29 @@
 {
-    "name": "carlosio/geckoboard",
-    "description": "A PHP library for dealing with Geckoboard API (http://www.geckoboard.com)",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Carlos Buenosvinos",
-            "email": "hi@carlos.io"
-        },
-        {
-            "name": "Raúl Fernández",
-            "email": "arsakiyo@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=5.3.3",
-        "guzzle/guzzle": "3.9.*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "4.*",
-        "mockery/mockery": "dev-master"
-    },
-    "autoload": {
-        "psr-4": {
-            "CarlosIO\\": "src/CarlosIO"
-        }
-    },
-    "config": {
-        "bin-dir": "bin/"
-    }
+	"name" : "carlosio/geckoboard",
+	"description" : "A PHP library for dealing with Geckoboard API (http://www.geckoboard.com)",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Carlos Buenosvinos",
+			"email" : "hi@carlos.io"
+		}, {
+			"name" : "Raúl Fernández",
+			"email" : "arsakiyo@gmail.com"
+		}
+	],
+	"require" : {
+		"php" : ">=5.3.3",
+		"guzzle/guzzle" : "~3.9.0"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "~4.0",
+		"mockery/mockery" : "dev-master"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"CarlosIO\\" : "src/CarlosIO"
+		}
+	},
+	"config" : {
+		"bin-dir" : "bin/"
+	}
 }
