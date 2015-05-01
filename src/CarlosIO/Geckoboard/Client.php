@@ -97,7 +97,7 @@ class Client
     /**
      * @param $widget
      */
-    private function pushWidget($widget)
+    private function pushWidget(Widget $widget)
     {
         $this->client->post(
             '/v1/send/'.$widget->getId(),
