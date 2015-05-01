@@ -212,7 +212,7 @@ class Point
             $cityData['country_code'] = $countryCode;
         }
 
-        if ($cityData) {
+        if (!empty($cityData)) {
             $result['city'] = $cityData;
         }
 

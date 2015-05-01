@@ -203,7 +203,6 @@ class HighchartsChart extends Widget
      */
     public function getData()
     {
-
         $returnValues = array(
             'chart' => array(
                 'type' => $this->getType()
@@ -219,6 +218,7 @@ class HighchartsChart extends Widget
         if ($this->getXAxisLabels()) {
             $returnValues['xAxis']['categories'] = $this->getXAxisLabels();
         }
+
         if ($this->getYAxisLabels()) {
             $returnValues['yAxis']['categories'] = $this->getYAxisLabels();
         }
@@ -226,6 +226,7 @@ class HighchartsChart extends Widget
         if ($this->getXAxisTitle()) {
             $returnValues['xAxis']['title']['text'] = $this->getXAxisTitle();
         }
+
         if ($this->getYAxisTitle()) {
             $returnValues['yAxis']['title']['text'] = $this->getYAxisTitle();
         }
@@ -239,16 +240,23 @@ class HighchartsChart extends Widget
             )
         );
 
+        return array('highchart' => $this->addSeriesData($returnValues));
+    }
+
+    /**
+     * @param $returnValues
+     * @return mixed
+     */
+    private function addSeriesData($returnValues)
+    {
         foreach ($this->getSeries() as $serieName => $serieValues) {
-            $serieData = array(
+            $returnValues['series'][] = array(
                 'name' => (isset($serieValues['name']) && $serieValues['name']) ? $serieValues['name'] : $serieName,
                 'data' => (isset($serieValues['data']) && $serieValues['data']) ? $serieValues['data'] : $serieValues,
                 'type' => (isset($serieValues['type']) && $serieValues['type']) ? $serieValues['type'] : 'line',
             );
-
-            $returnValues['series'][] = $serieData;
         }
 
-        return array('highchart' => $returnValues);
+        return $returnValues;
     }
 }
