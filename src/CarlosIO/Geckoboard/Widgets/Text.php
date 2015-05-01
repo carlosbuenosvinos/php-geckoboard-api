@@ -62,7 +62,7 @@ class Text extends Widget
     {
         return array(
             'item' => array_map(
-                function ($item) {
+                function (Item $item) {
                     return $item->toArray();
                 },
                 $this->getItems()
