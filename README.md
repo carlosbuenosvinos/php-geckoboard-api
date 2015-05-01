@@ -2,6 +2,7 @@ CarlosIO\Geckoboard
 ===================
 
 [![Build Status](https://travis-ci.org/carlosbuenosvinos/php-geckoboard-api.svg?branch=master)](http://travis-ci.org/carlosbuenosvinos/php-geckoboard-api) [![Code Coverage](https://scrutinizer-ci.com/g/carlosbuenosvinos/php-geckoboard-api/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/carlosbuenosvinos/php-geckoboard-api/?branch=master) [![Latest Stable Version](https://poser.pugx.org/carlosio/geckoboard/v/stable.svg)](https://packagist.org/packages/carlosio/geckoboard) [![Total Downloads](https://poser.pugx.org/carlosio/geckoboard/downloads.svg)](https://packagist.org/packages/carlosio/geckoboard) [![Latest Unstable Version](https://poser.pugx.org/carlosio/geckoboard/v/unstable.svg)](https://packagist.org/packages/carlosio/geckoboard) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/carlosbuenosvinos/php-geckoboard-api/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/carlosbuenosvinos/php-geckoboard-api/?branch=master) [![License](https://poser.pugx.org/carlosio/geckoboard/license.svg)](https://packagist.org/packages/carlosio/geckoboard)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/cde19e73-6d4c-4e04-ac39-e746a8333d23/mini.png)](https://insight.sensiolabs.com/projects/cde19e73-6d4c-4e04-ac39-e746a8333d23)
 
 A PHP library for pushing data into Geckoboard custom widgets (http://www.geckoboard.com/developers/custom-widgets/widget-types)
 
