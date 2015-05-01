@@ -61,7 +61,7 @@ class Client
      * @param Widget $widget
      * @return $this
      */
-    public function push($widget)
+    public function push(Widget $widget)
     {
         $this->pushWidgets(
             $this->getWidgetsArray($widget)
