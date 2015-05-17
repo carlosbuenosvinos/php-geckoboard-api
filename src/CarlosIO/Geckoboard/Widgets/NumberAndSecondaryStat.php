@@ -217,7 +217,11 @@ class NumberAndSecondaryStat extends Widget
         }
 
         $secondaryValue = $this->getSecondaryValue();
-        if (null !== $secondaryValue) {
+        if (is_array($secondaryValue)){
+            $result['item'][] = $secondaryValue;
+        }
+
+        else if (null !== $secondaryValue) {
             $result['item'][] = array(
                 'text' => $this->secondaryText,
                 'value' => (float) $secondaryValue
