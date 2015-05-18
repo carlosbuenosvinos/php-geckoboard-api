@@ -58,10 +58,10 @@ class Client
     /**
      * Send the widget info to Geckboard
      *
-     * @param Widget $widget
+     * @param $widget
      * @return $this
      */
-    public function push(Widget $widget)
+    public function push($widget)
     {
         $this->pushWidgets(
             $this->getWidgetsArray($widget)
