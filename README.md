@@ -326,6 +326,29 @@ $widget = (new Monitoring())
 $geckoboardClient()->push($widget);
 ```
 
+Widget: LeaderBoard
+==================
+![Monitoring](https://developer.geckoboard.com/images/leaderboard-834d9e04.png)
+
+```php
+$widget = new LeaderBoard();
+$widget->setId('<your widget id>')
+
+$item = new Item();
+$item->setLabel("Title text")
+    ->setValue(10)
+    ->setPreviousRank(2);
+$widget->addItem($item);
+
+$item = new Item();
+$item->setLabel("Title text 2")
+    ->setValue(7)
+    ->setPreviousRank(1);
+$widget->addItem($item);
+
+$geckoboardClient()->push($widget);
+```
+
 Push more than one widget at the same time
 ===========================================
 
