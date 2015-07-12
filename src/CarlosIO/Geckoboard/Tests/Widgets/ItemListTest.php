@@ -67,4 +67,20 @@ class ItemListTest extends \PHPUnit_Framework_TestCase
         $json = json_encode($widget->getData());
         $this->assertEquals('[{"title":{"text":"Title text","highlight":true},"label":{"name":"Label name","color":"red"},"description":"description1"},{"title":{"text":"Title2 text","highlight":false},"label":{"name":"Label2 name","color":"blue"},"description":"description2"}]', $json);
     }
+
+    /**
+     * @test
+     */
+    public function canHaveNoLabel()
+    {
+        $widget = new ItemList();
+
+        $title = new Title();
+        $title->setText("Title text");
+        $title->setHighlight(true);
+
+        $widget->addItem($title, null, 'description');
+        $json = json_encode($widget->getData());
+        $this->assertEquals('[{"title":{"text":"Title text","highlight":true},"description":"description"}]', $json);
+    }
 }
