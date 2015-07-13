@@ -33,6 +33,16 @@ class Client
     }
 
     /**
+     * @param array|\Guzzle\Common\Collection $config
+     * @return Client $this
+     */
+    public function setGuzzleConfig($config)
+    {
+        $this->client->setConfig($config);
+        return $this;
+    }
+
+    /**
      * Set Geckoboard API key
      *
      * @param $apiKey
