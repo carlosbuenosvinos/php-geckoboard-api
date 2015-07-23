@@ -365,6 +365,16 @@ $widgets[] = $widget;
 $geckoboardClient->push($widgets);
 ```
 
+Set timeout for pushing widgets
+===========================================
+Use `setGuzzleConfig()` to pass config options directly to Guzzle.
+```php
+$geckoboardClient = new Client();
+$geckoboardClient->setApiKey('<your token>');
+$geckoboardClient->setGuzzleConfig(['timeout' => 30, 'connect_timeout' => 3]);
+$geckoboardClient->push($widget);
+```
+
 Testing
 =======
 
