@@ -43,6 +43,15 @@ class Client
     }
 
     /**
+     * @param string|bool $key
+     * @return \Guzzle\Common\Collection|mixed
+     */
+    public function getGuzzleConfig($key = false)
+    {
+        return $this->client->getConfig($key);
+    }
+
+    /**
      * Set Geckoboard API key
      *
      * @param $apiKey

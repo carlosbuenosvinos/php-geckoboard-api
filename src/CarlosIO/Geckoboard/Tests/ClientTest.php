@@ -3,6 +3,7 @@
 namespace CarlosIO\Geckoboard\Tests;
 
 use CarlosIO\Geckoboard\Client as Geckoboard;
+use Guzzle\Common\Collection;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -10,6 +11,9 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     {
         $client = new Geckoboard();
         $this->assertSame('foo', $client->setApiKey('foo')->getApiKey());
+        $config = new Collection(['timeout' => 10, 'connect_timeout' => 1]);
+        $this->assertSame($config, $client->setGuzzleConfig($config)->getGuzzleConfig());
+        $this->assertSame(10, $client->getGuzzleConfig('timeout'));
     }
 
     public function testClient()
