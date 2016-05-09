@@ -5,8 +5,7 @@ namespace CarlosIO\Geckoboard\Widgets;
 use CarlosIO\Geckoboard\Data\Entry;
 
 /**
- * Class RagNumbers
- * @package CarlosIO\Geckoboard\Widgets
+ * Class RagNumbers.
  */
 class RagNumbers extends Widget
 {
@@ -24,7 +23,7 @@ class RagNumbers extends Widget
     }
 
     /**
-     * Get red data
+     * Get red data.
      *
      * @return Entry
      */
@@ -34,9 +33,10 @@ class RagNumbers extends Widget
     }
 
     /**
-     * Set red data
+     * Set red data.
      *
      * @param Entry $entry
+     *
      * @return $this
      */
     public function setRedData(Entry $entry)
@@ -47,7 +47,7 @@ class RagNumbers extends Widget
     }
 
     /**
-     * Get amber data
+     * Get amber data.
      *
      * @return Entry
      */
@@ -57,9 +57,10 @@ class RagNumbers extends Widget
     }
 
     /**
-     * Set amber data
+     * Set amber data.
      *
      * @param Entry $entry
+     *
      * @return $this
      */
     public function setAmberData(Entry $entry)
@@ -70,7 +71,7 @@ class RagNumbers extends Widget
     }
 
     /**
-     * Get green data
+     * Get green data.
      *
      * @return Entry
      */
@@ -80,9 +81,10 @@ class RagNumbers extends Widget
     }
 
     /**
-     * Set green data
+     * Set green data.
      *
      * @param Entry $entry
+     *
      * @return $this
      */
     public function setGreenData(Entry $entry)
@@ -115,15 +117,16 @@ class RagNumbers extends Widget
         }
 
         return array(
-            'item' => $result
+            'item' => $result,
         );
     }
 
     /**
-     * Set specific data
+     * Set specific data.
      *
      * @param $color
      * @param $entry
+     *
      * @return $this
      */
     protected function setEntry($color, $entry)
@@ -134,15 +137,16 @@ class RagNumbers extends Widget
     }
 
     /**
-     * Get specific data
+     * Get specific data.
      *
      * @param $color
+     *
      * @return null|Entry
      */
     protected function getEntry($color)
     {
         if (!isset($this->dataset[$color])) {
-            return null;
+            return;
         }
 
         return $this->dataset[$color];

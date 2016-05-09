@@ -3,15 +3,14 @@
 namespace CarlosIO\Geckoboard\Widgets;
 
 /**
- * Class LineChart
- * @package CarlosIO\Geckoboard\Widgets
+ * Class LineChart.
  */
 class LineChart extends Widget
 {
-    CONST DIMENSION_X = 'x';
-    CONST DIMENSION_Y = 'y';
+    const DIMENSION_X = 'x';
+    const DIMENSION_Y = 'y';
 
-    CONST DEFAULT_COLOUR = "ff9900";
+    const DEFAULT_COLOUR = 'ff9900';
 
     /**
      * @var array
@@ -29,9 +28,10 @@ class LineChart extends Widget
     protected $axis;
 
     /**
-     * Set the items property
+     * Set the items property.
      *
      * @param array $items Set of items to add to the widget
+     *
      * @return $this
      */
     public function setItems(array $items)
@@ -44,7 +44,7 @@ class LineChart extends Widget
     }
 
     /**
-     * Return the items attribute
+     * Return the items attribute.
      *
      * @return array
      */
@@ -58,9 +58,10 @@ class LineChart extends Widget
     }
 
     /**
-     * Add an item to the item list
+     * Add an item to the item list.
      *
      * @param \CarlosIO\Geckoboard\Data\Text\Item $item Item to be added
+     *
      * @return $this
      */
     public function addItem($item)
@@ -75,24 +76,25 @@ class LineChart extends Widget
     }
 
     /**
-     * Set the colour of the line in the widget
+     * Set the colour of the line in the widget.
      *
      * @param string $colour Colour of the line in the widget in hexadecimal format
+     *
      * @return $this
      */
     public function setColour($colour)
     {
-      if (!preg_match('/^[a-f0-9]{6}$/i', $colour)) {
-        throw new \InvalidArgumentException(sprintf("Value %s must be a valid hex colour", $colour));
-      }
+        if (!preg_match('/^[a-f0-9]{6}$/i', $colour)) {
+            throw new \InvalidArgumentException(sprintf('Value %s must be a valid hex colour', $colour));
+        }
 
-      $this->colour = $colour;
+        $this->colour = $colour;
 
-      return $this;
+        return $this;
     }
 
     /**
-     * Return the colour of the line in the widget
+     * Return the colour of the line in the widget.
      *
      * @return string
      */
@@ -106,15 +108,16 @@ class LineChart extends Widget
     }
 
     /**
-     * Set the elements to appear evenly spread along dimension
+     * Set the elements to appear evenly spread along dimension.
      *
      * @param string $dimension The dimension where labels will be displayed
-     * @param array $labels Labels displayed in this axis
+     * @param array  $labels    Labels displayed in this axis
+     *
      * @return $this
      */
     public function setAxis($dimension, $labels)
     {
-        foreach($labels as $label) {
+        foreach ($labels as $label) {
             $this->addLabel($dimension, $label);
         }
 
@@ -122,31 +125,31 @@ class LineChart extends Widget
     }
 
     /**
-     * Add a new label to an specific axis
+     * Add a new label to an specific axis.
      *
      * @param string $dimension The dimension where labels will be displayed
      * @param mix    $label     Label displayed in this axis
      */
     protected function addLabel($dimension, $label)
     {
-      if (!in_array($dimension, array(self::DIMENSION_X, self::DIMENSION_Y))) {
-        throw new \InvalidArgumentException(sprintf("Value '%s' is not a valid dimension", $dimension));
-      }
+        if (!in_array($dimension, array(self::DIMENSION_X, self::DIMENSION_Y))) {
+            throw new \InvalidArgumentException(sprintf("Value '%s' is not a valid dimension", $dimension));
+        }
 
-      $this->axis[$dimension][] = $label;
+        $this->axis[$dimension][] = $label;
     }
 
     /**
-     * Return axises in a 2D array
+     * Return axises in a 2D array.
      */
     public function getAxis()
     {
-      if (null === $this->axis) {
-        $this->axis[self::DIMENSION_X] = array();
-        $this->axis[self::DIMENSION_Y] = array();
-      }
+        if (null === $this->axis) {
+            $this->axis[self::DIMENSION_X] = array();
+            $this->axis[self::DIMENSION_Y] = array();
+        }
 
-      return $this->axis;
+        return $this->axis;
     }
 
     /**
@@ -159,10 +162,10 @@ class LineChart extends Widget
         return array(
             'item' => $this->getItems(),
             'settings' => array(
-              'axisx'  => $axis[self::DIMENSION_X],
-              'axisy'  => $axis[self::DIMENSION_Y],
-              'colour' => $this->getColour()
-            )
+              'axisx' => $axis[self::DIMENSION_X],
+              'axisy' => $axis[self::DIMENSION_Y],
+              'colour' => $this->getColour(),
+            ),
         );
     }
 }

@@ -3,8 +3,7 @@
 namespace CarlosIO\Geckoboard\Data\Bullet;
 
 /**
- * Class Item
- * @package CarlosIO\Geckoboard\Data\Bullet
+ * Class Item.
  */
 class Item
 {
@@ -47,6 +46,7 @@ class Item
 
     /**
      * @param $comparative
+     *
      * @return $this
      */
     public function setComparative($comparative)
@@ -66,6 +66,7 @@ class Item
 
     /**
      * @param $axisPoint
+     *
      * @return $this
      */
     public function setAxisPoint($axisPoint)
@@ -85,6 +86,7 @@ class Item
 
     /**
      * @param $label
+     *
      * @return $this
      */
     public function setLabel($label)
@@ -95,7 +97,6 @@ class Item
     }
 
     /**
-     * @return null
      */
     public function getLabel()
     {
@@ -104,6 +105,7 @@ class Item
 
     /**
      * @param $measure
+     *
      * @return $this
      */
     public function setMeasure($measure)
@@ -123,6 +125,7 @@ class Item
 
     /**
      * @param $range
+     *
      * @return $this
      */
     public function setRange($range)
@@ -142,6 +145,7 @@ class Item
 
     /**
      * @param $sublabel
+     *
      * @return $this
      */
     public function setSublabel($sublabel)
@@ -152,7 +156,6 @@ class Item
     }
 
     /**
-     * @return null
      */
     public function getSublabel()
     {

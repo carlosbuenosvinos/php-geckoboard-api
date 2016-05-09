@@ -3,8 +3,7 @@
 namespace CarlosIO\Geckoboard\Widgets;
 
 /**
- * Class Widget
- * @package CarlosIO\Geckoboard\Widgets
+ * Class Widget.
  */
 abstract class Widget
 {
@@ -14,9 +13,10 @@ abstract class Widget
     protected $id;
 
     /**
-     * Set widget id
+     * Set widget id.
      *
      * @param $id
+     *
      * @return $this
      */
     public function setId($id)
@@ -27,7 +27,7 @@ abstract class Widget
     }
 
     /**
-     * Get widget id
+     * Get widget id.
      *
      * @return string
      */
@@ -37,7 +37,7 @@ abstract class Widget
     }
 
     /**
-     * Get data in array format
+     * Get data in array format.
      *
      * @return array
      */

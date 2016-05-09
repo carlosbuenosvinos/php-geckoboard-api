@@ -5,8 +5,7 @@ namespace CarlosIO\Geckoboard\Widgets;
 use CarlosIO\Geckoboard\Data\Entry;
 
 /**
- * Class GeckoMeter
- * @package CarlosIO\Geckoboard\Widgets
+ * Class GeckoMeter.
  */
 class GeckoMeter extends Widget
 {
@@ -33,6 +32,7 @@ class GeckoMeter extends Widget
 
     /**
      * @param $value
+     *
      * @return $this
      */
     public function setValue($value)
@@ -76,7 +76,7 @@ class GeckoMeter extends Widget
         $result = array(
             'item' => $this->getValue(),
             'max' => $this->getMaxData()->toArray(),
-            'min' => $this->getMinData()->toArray()
+            'min' => $this->getMinData()->toArray(),
         );
 
         if ($this->getReversed()) {

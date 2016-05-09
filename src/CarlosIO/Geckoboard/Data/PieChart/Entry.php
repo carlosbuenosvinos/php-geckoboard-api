@@ -1,9 +1,9 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Data\PieChart;
 
 /**
- * Class Entry
- * @package CarlosIO\Geckoboard\Data\PieChart
+ * Class Entry.
  */
 class Entry
 {
@@ -30,6 +30,7 @@ class Entry
 
     /**
      * @param $value
+     *
      * @return $this
      */
     public function setValue($value)
@@ -41,6 +42,7 @@ class Entry
 
     /**
      * @param  $label
+     *
      * @return $this
      */
     public function setLabel($label)

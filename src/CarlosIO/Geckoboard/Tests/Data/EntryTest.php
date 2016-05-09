@@ -7,7 +7,7 @@ use CarlosIO\Geckoboard\Data\Entry;
 class EntryTest extends \PHPUnit_Framework_TestCase
 {
     public function testFullMethodsDataEntry()
-        {
+    {
         $entry = new Entry();
         $entry
             ->setValue(100)

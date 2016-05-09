@@ -1,11 +1,11 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Data;
 
 use CarlosIO\Geckoboard\Data\Point\SizeOutOfBoundsException;
 
 /**
- * Class Point
- * @package CarlosIO\Geckoboard\Data
+ * Class Point.
  */
 class Point
 {
@@ -57,6 +57,7 @@ class Point
 
     /**
      * @param $latitude
+     *
      * @return $this
      */
     public function setLatitude($latitude)
@@ -67,7 +68,6 @@ class Point
     }
 
     /**
-     * @return null
      */
     public function getLatitude()
     {
@@ -76,6 +76,7 @@ class Point
 
     /**
      * @param $longitude
+     *
      * @return $this
      */
     public function setLongitude($longitude)
@@ -86,7 +87,6 @@ class Point
     }
 
     /**
-     * @return null
      */
     public function getLongitude()
     {
@@ -95,6 +95,7 @@ class Point
 
     /**
      * @param $cityName
+     *
      * @return $this
      */
     public function setCityName($cityName)
@@ -105,7 +106,6 @@ class Point
     }
 
     /**
-     * @return null
      */
     public function getCityName()
     {
@@ -114,6 +114,7 @@ class Point
 
     /**
      * @param $color
+     *
      * @return $this
      */
     public function setColor($color)
@@ -124,7 +125,6 @@ class Point
     }
 
     /**
-     * @return null
      */
     public function getColor()
     {
@@ -133,6 +133,7 @@ class Point
 
     /**
      * @param $countryCode
+     *
      * @return $this
      */
     public function setCountryCode($countryCode)
@@ -143,7 +144,6 @@ class Point
     }
 
     /**
-     * @return null
      */
     public function getCountryCode()
     {
@@ -152,6 +152,7 @@ class Point
 
     /**
      * @param $cssClass
+     *
      * @return $this
      */
     public function setCssClass($cssClass)
@@ -162,7 +163,6 @@ class Point
     }
 
     /**
-     * @return null
      */
     public function getCssClass()
     {
@@ -171,7 +171,9 @@ class Point
 
     /**
      * @param $size
+     *
      * @throws Point\SizeOutOfBoundsException
+     *
      * @return $this
      */
     public function setSize($size)
@@ -187,7 +189,6 @@ class Point
     }
 
     /**
-     * @return null
      */
     public function getSize()
     {

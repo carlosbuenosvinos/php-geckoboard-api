@@ -12,7 +12,7 @@ class RagNumbersTest extends \PHPUnit_Framework_TestCase
      */
     public function jsonForFullData($widgetName)
     {
-        $widget = new $widgetName;
+        $widget = new $widgetName();
         $widget->setId('29473-d7ae87e3-ac3f-4911-95ce-ec91439a4170');
 
         $redData = new Entry();
@@ -37,7 +37,7 @@ class RagNumbersTest extends \PHPUnit_Framework_TestCase
      */
     public function JsonForGreenAndRedData($widgetName)
     {
-        $widget = new $widgetName;
+        $widget = new $widgetName();
 
         $widget->setId('29473-d7ae87e3-ac3f-4911-95ce-ec91439a4170');
 
@@ -57,7 +57,7 @@ class RagNumbersTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('CarlosIO\Geckoboard\Widgets\RagNumbers'),
-            array('CarlosIO\Geckoboard\Widgets\RagColumnAndNumbers')
+            array('CarlosIO\Geckoboard\Widgets\RagColumnAndNumbers'),
         );
     }
 }

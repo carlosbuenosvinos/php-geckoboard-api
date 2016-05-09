@@ -5,8 +5,7 @@ namespace CarlosIO\Geckoboard\Tests\Widgets;
 use CarlosIO\Geckoboard\Widgets\Monitoring;
 
 /**
- * Class MonitoringTest
- * @package CarlosIO\Geckoboard\Tests\Widgets
+ * Class MonitoringTest.
  */
 class MonitoringTest extends \PHPUnit_Framework_TestCase
 {

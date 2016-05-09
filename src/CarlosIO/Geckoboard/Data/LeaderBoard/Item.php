@@ -3,10 +3,10 @@
 namespace CarlosIO\Geckoboard\Data\LeaderBoard;
 
 /**
- * Class Item
- * @package CarlosIO\Geckoboard\Data\LeaderBoard
+ * Class Item.
  */
-class Item {
+class Item
+{
     /**
      * @var string
      */
@@ -18,7 +18,7 @@ class Item {
     protected $value;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $previousRank;
 
@@ -32,12 +32,13 @@ class Item {
 
     /**
      * @param $label
+     *
      * @return $this
      */
     public function setLabel($label)
     {
         $this->label = $label;
-        
+
         return $this;
     }
 
@@ -51,6 +52,7 @@ class Item {
 
     /**
      * @param $value
+     *
      * @return $this
      */
     public function setValue($value)
@@ -70,6 +72,7 @@ class Item {
 
     /**
      * @param $previousRank
+     *
      * @return $this
      */
     public function setPreviousRank($previousRank)

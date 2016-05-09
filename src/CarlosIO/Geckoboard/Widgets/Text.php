@@ -5,8 +5,7 @@ namespace CarlosIO\Geckoboard\Widgets;
 use CarlosIO\Geckoboard\Data\Text\Item;
 
 /**
- * Class Text
- * @package CarlosIO\Geckoboard\Widgets
+ * Class Text.
  */
 class Text extends Widget
 {
@@ -16,9 +15,10 @@ class Text extends Widget
     protected $items;
 
     /**
-     * Set the items property
+     * Set the items property.
      *
      * @param array $items Set of items to add to the widget
+     *
      * @return $this
      */
     public function setItems($items)
@@ -29,7 +29,7 @@ class Text extends Widget
     }
 
     /**
-     * Return the items attribute
+     * Return the items attribute.
      *
      * @return array
      */
@@ -43,9 +43,10 @@ class Text extends Widget
     }
 
     /**
-     * Add an item to the item list
+     * Add an item to the item list.
      *
      * @param \CarlosIO\Geckoboard\Data\Text\Item $item Item to be added
+     *
      * @return $this
      */
     public function addItem(Item $item)
@@ -66,7 +67,7 @@ class Text extends Widget
                     return $item->toArray();
                 },
                 $this->getItems()
-            )
+            ),
         );
     }
 }

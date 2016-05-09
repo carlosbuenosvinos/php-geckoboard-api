@@ -6,8 +6,7 @@ use Guzzle\Http\Client as Guzzle;
 use CarlosIO\Geckoboard\Widgets\Widget;
 
 /**
- * Class Client
- * @package CarlosIO\Geckoboard
+ * Class Client.
  */
 class Client
 {
@@ -24,7 +23,7 @@ class Client
     protected $api;
 
     /**
-     * Construct a new Geckoboard Client
+     * Construct a new Geckoboard Client.
      */
     public function __construct()
     {
@@ -34,16 +33,19 @@ class Client
 
     /**
      * @param array|\Guzzle\Common\Collection $config
+     *
      * @return Client $this
      */
     public function setGuzzleConfig($config)
     {
         $this->client->setConfig($config);
+
         return $this;
     }
 
     /**
      * @param string|bool $key
+     *
      * @return \Guzzle\Common\Collection|mixed
      */
     public function getGuzzleConfig($key = false)
@@ -52,9 +54,10 @@ class Client
     }
 
     /**
-     * Set Geckoboard API key
+     * Set Geckoboard API key.
      *
      * @param $apiKey
+     *
      * @return $this
      */
     public function setApiKey($apiKey)
@@ -65,7 +68,7 @@ class Client
     }
 
     /**
-     * Get Geckoboard API key
+     * Get Geckoboard API key.
      *
      * @return string
      */
@@ -75,9 +78,10 @@ class Client
     }
 
     /**
-     * Send the widget info to Geckboard
+     * Send the widget info to Geckboard.
      *
      * @param $widget
+     *
      * @return $this
      */
     public function push($widget)
@@ -91,6 +95,7 @@ class Client
 
     /**
      * @param $widget
+     *
      * @return array
      */
     private function getWidgetsArray($widget)
@@ -124,7 +129,7 @@ class Client
             json_encode(
                 array(
                     'api_key' => $this->getApiKey(),
-                    'data' => $widget->getData()
+                    'data' => $widget->getData(),
                 )
             ))->send();
     }

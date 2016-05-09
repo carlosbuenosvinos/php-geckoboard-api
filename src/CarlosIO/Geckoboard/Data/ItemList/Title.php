@@ -10,7 +10,7 @@ class Title
     protected $text;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $highlight;
 
@@ -24,6 +24,7 @@ class Title
 
     /**
      * @param mixed $highlight
+     *
      * @return $this
      */
     public function setHighlight($highlight)
@@ -43,6 +44,7 @@ class Title
 
     /**
      * @param string $text
+     *
      * @return $this
      */
     public function setText($text)
@@ -53,7 +55,7 @@ class Title
     }
 
     /**
-     * Returns an array representation of this object
+     * Returns an array representation of this object.
      *
      * @return array
      */

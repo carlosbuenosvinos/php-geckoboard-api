@@ -8,21 +8,21 @@ use CarlosIO\Geckoboard\Data\Text\Item;
 class TextTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Test with an empty dataset
+     * Test with an empty dataset.
      */
     public function testJsonForAnEmptyData()
     {
         $widget = new Text();
-        $json   = json_encode($widget->getData());
+        $json = json_encode($widget->getData());
         $this->assertEquals('{"item":[]}', $json);
     }
 
     /**
-     * Test with an incomplete dataset
+     * Test with an incomplete dataset.
      */
     public function testJsonForSomeData()
     {
-        $widget    = new Text();
+        $widget = new Text();
         $firstItem = new Item();
         $firstItem->setText('first text');
         $widget->addItem($firstItem);
@@ -31,11 +31,11 @@ class TextTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test with one full dataset
+     * Test with one full dataset.
      */
     public function testJsonForFullData()
     {
-        $widget    = new Text();
+        $widget = new Text();
         $firstItem = new Item();
         $firstItem->setText('first text');
         $firstItem->setType(Item::TYPE_INFO);
@@ -45,12 +45,12 @@ class TextTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test with more than one dataset
+     * Test with more than one dataset.
      */
     public function testJsonForMultipleItems()
     {
-        $widget     = new Text();
-        $firstItem  = new Item();
+        $widget = new Text();
+        $firstItem = new Item();
         $secondItem = new Item();
         $firstItem->setText('first text');
         $secondItem->setType(Item::TYPE_ALERT);

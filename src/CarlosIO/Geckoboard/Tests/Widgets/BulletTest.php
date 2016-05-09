@@ -41,7 +41,7 @@ class BulletTest extends \PHPUnit_Framework_TestCase
                 'range' => $item->getRange(),
                 'measure' => $item->getMeasure(),
                 'comparative' => array('point' => $item->getComparative()),
-            )
+            ),
         );
 
         $this->assertEquals($expectedData, $myBullet->getData());

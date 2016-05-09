@@ -3,8 +3,7 @@
 namespace CarlosIO\Geckoboard\Widgets;
 
 /**
- * Class NumberAndSecondaryStat
- * @package CarlosIO\Geckoboard\Widgets
+ * Class NumberAndSecondaryStat.
  */
 class NumberAndSecondaryStat extends Widget
 {
@@ -39,14 +38,15 @@ class NumberAndSecondaryStat extends Widget
     private $secondaryText = '';
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $absolute = false;
 
     /**
-     * Set data main prefix (€, $, etc.)
+     * Set data main prefix (€, $, etc.).
      *
      * @param string $mainPrefix
+     *
      * @return $this
      */
     public function setMainPrefix($mainPrefix)
@@ -57,7 +57,7 @@ class NumberAndSecondaryStat extends Widget
     }
 
     /**
-     * Get data main prefix (€, $, etc.)
+     * Get data main prefix (€, $, etc.).
      *
      * @return string
      */
@@ -67,9 +67,10 @@ class NumberAndSecondaryStat extends Widget
     }
 
     /**
-     * Set main value
+     * Set main value.
      *
      * @param int $mainValue
+     *
      * @return $this
      */
     public function setMainValue($mainValue)
@@ -80,7 +81,7 @@ class NumberAndSecondaryStat extends Widget
     }
 
     /**
-     * Get main value
+     * Get main value.
      *
      * @return int
      */
@@ -91,7 +92,7 @@ class NumberAndSecondaryStat extends Widget
 
     /**
      * Set the primary text value. (Visible if widget is 2x2
-     * or 1x1 without a secondary value)
+     * or 1x1 without a secondary value).
      *
      * @param string $mainText The text body
      *
@@ -100,6 +101,7 @@ class NumberAndSecondaryStat extends Widget
     public function setMainText($mainText)
     {
         $this->mainText = $mainText;
+
         return $this;
     }
 
@@ -114,9 +116,10 @@ class NumberAndSecondaryStat extends Widget
     }
 
     /**
-     * Set secondary value
+     * Set secondary value.
      *
      * @param int $secondaryValue
+     *
      * @return $this
      */
     public function setSecondaryValue($secondaryValue)
@@ -127,7 +130,7 @@ class NumberAndSecondaryStat extends Widget
     }
 
     /**
-     * Get secondary value
+     * Get secondary value.
      *
      * @return string
      */
@@ -137,7 +140,7 @@ class NumberAndSecondaryStat extends Widget
     }
 
     /**
-     * Set the secondary text value. (Visible if widget is 2x2)
+     * Set the secondary text value. (Visible if widget is 2x2).
      *
      * @param string $secondaryText The text body
      *
@@ -146,6 +149,7 @@ class NumberAndSecondaryStat extends Widget
     public function setSecondaryText($secondaryText)
     {
         $this->secondaryText = $secondaryText;
+
         return $this;
     }
 
@@ -161,6 +165,7 @@ class NumberAndSecondaryStat extends Widget
 
     /**
      * @param string|null $prefix
+     *
      * @return $this
      */
     public function setType($prefix)
@@ -181,7 +186,7 @@ class NumberAndSecondaryStat extends Widget
     /**
      * Mark this widget as absolute.
      *
-     * @param boolean $absolute The absolute value
+     * @param bool $absolute The absolute value
      *
      * @return NumberAndSecondaryStat
      */
@@ -217,14 +222,12 @@ class NumberAndSecondaryStat extends Widget
         }
 
         $secondaryValue = $this->getSecondaryValue();
-        if (is_array($secondaryValue)){
+        if (is_array($secondaryValue)) {
             $result['item'][] = $secondaryValue;
-        }
-
-        else if (null !== $secondaryValue) {
+        } elseif (null !== $secondaryValue) {
             $result['item'][] = array(
                 'text' => $this->secondaryText,
-                'value' => (float) $secondaryValue
+                'value' => (float) $secondaryValue,
             );
         }
 

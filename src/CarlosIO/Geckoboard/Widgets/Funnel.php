@@ -3,8 +3,7 @@
 namespace CarlosIO\Geckoboard\Widgets;
 
 /**
- * Class Funnel
- * @package CarlosIO\Geckoboard\Widgets
+ * Class Funnel.
  */
 class Funnel extends Widget
 {
@@ -46,7 +45,7 @@ class Funnel extends Widget
     public function getData()
     {
         $data = array();
-        foreach($this->dataset as $entry) {
+        foreach ($this->dataset as $entry) {
             $data[] = $entry->toArray();
         }
 

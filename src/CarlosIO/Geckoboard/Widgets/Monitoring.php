@@ -3,13 +3,12 @@
 namespace CarlosIO\Geckoboard\Widgets;
 
 /**
- * Class Monitoring
- * @package CarlosIO\Geckoboard\Widgets
+ * Class Monitoring.
  */
 class Monitoring extends Widget
 {
-    const STATUS_UP     = 'Up';
-    const STATUS_DOWN   = 'Down';
+    const STATUS_UP = 'Up';
+    const STATUS_DOWN = 'Down';
 
     /**
      * @var string
@@ -28,12 +27,13 @@ class Monitoring extends Widget
 
     /**
      * @param $status
+     *
      * @return $this
      */
     public function setStatus($status)
     {
         if ($status !== self::STATUS_UP && $status !== self::STATUS_DOWN) {
-            $message = "Value '%s' must be " . self::STATUS_UP . " or " . self::STATUS_DOWN;
+            $message = "Value '%s' must be ".self::STATUS_UP.' or '.self::STATUS_DOWN;
             throw new \InvalidArgumentException(sprintf($message, $status));
         }
 
@@ -44,6 +44,7 @@ class Monitoring extends Widget
 
     /**
      * @param $downtime
+     *
      * @return $this
      */
     public function setDownTime($downtime)
@@ -55,6 +56,7 @@ class Monitoring extends Widget
 
     /**
      * @param $responseTime
+     *
      * @return $this
      */
     public function setResponseTime($responseTime)
@@ -94,9 +96,9 @@ class Monitoring extends Widget
     public function getData()
     {
         return array(
-            'status'  => $this->getStatus(),
-            'downTime'  => $this->getDownTime(),
-            'responseTime' => $this->getResponseTime()
+            'status' => $this->getStatus(),
+            'downTime' => $this->getDownTime(),
+            'responseTime' => $this->getResponseTime(),
         );
     }
 }

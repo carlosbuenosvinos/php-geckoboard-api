@@ -1,13 +1,12 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Widgets;
 
 /**
- * Class LineChart
- * @package CarlosIO\Geckoboard\Widgets
+ * Class LineChart.
  */
 class HighchartsChart extends Widget
 {
-
     protected $type;
 
     protected $title;
@@ -184,7 +183,6 @@ class HighchartsChart extends Widget
         return $this;
     }
 
-
     public function setSingleSerie($serieName, $serie)
     {
         $this->series[$serieName] = $serie;
@@ -205,13 +203,13 @@ class HighchartsChart extends Widget
     {
         $returnValues = array(
             'chart' => array(
-                'type' => $this->getType()
+                'type' => $this->getType(),
             ),
             'title' => array(
-                'text' => $this->getTitle()
+                'text' => $this->getTitle(),
             ),
             'subtitle' => array(
-                'text' => $this->getSubtitle()
+                'text' => $this->getSubtitle(),
             ),
         );
 
@@ -234,10 +232,10 @@ class HighchartsChart extends Widget
         $returnValues['plotOptions'] = array(
             'line' => array(
                 'dataLabels' => array(
-                    'enabled' => true
+                    'enabled' => true,
                 ),
-                'enableMouseTracking' => false
-            )
+                'enableMouseTracking' => false,
+            ),
         );
 
         return array('highchart' => $this->addSeriesData($returnValues));
@@ -245,6 +243,7 @@ class HighchartsChart extends Widget
 
     /**
      * @param $returnValues
+     *
      * @return mixed
      */
     private function addSeriesData($returnValues)

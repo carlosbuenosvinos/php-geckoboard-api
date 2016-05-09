@@ -4,9 +4,9 @@ namespace CarlosIO\Geckoboard\Data\Text;
 
 class Item
 {
-    const TYPE_NONE  = 0;
+    const TYPE_NONE = 0;
     const TYPE_ALERT = 1;
-    const TYPE_INFO  = 2;
+    const TYPE_INFO = 2;
 
     /**
      * @var string
@@ -20,6 +20,7 @@ class Item
 
     /**
      * @param string $text
+     *
      * @return $this
      */
     public function setText($text)
@@ -30,7 +31,7 @@ class Item
     }
 
     /**
-     * Returns text attribute
+     * Returns text attribute.
      *
      * @return string
      */
@@ -45,6 +46,7 @@ class Item
 
     /**
      * @param int $type Type of the item, can be 0, 1 or 2
+     *
      * @return $this
      */
     public function setType($type)
@@ -67,7 +69,7 @@ class Item
     }
 
     /**
-     * Returns an array representation of this object
+     * Returns an array representation of this object.
      *
      * @return array
      */

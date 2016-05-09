@@ -3,8 +3,7 @@
 namespace CarlosIO\Geckoboard\Widgets;
 
 /**
- * Class PieChart
- * @package CarlosIO\Geckoboard\Widgets
+ * Class PieChart.
  */
 class PieChart extends Widget
 {
@@ -20,7 +19,7 @@ class PieChart extends Widget
     public function getData()
     {
         $data = array();
-        foreach($this->dataset as $entry) {
+        foreach ($this->dataset as $entry) {
             $data[] = $entry->toArray();
         }
 

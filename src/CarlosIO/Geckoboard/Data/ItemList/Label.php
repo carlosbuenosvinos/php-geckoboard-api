@@ -24,6 +24,7 @@ class Label
 
     /**
      * @param mixed $color
+     *
      * @return $this
      */
     public function setColor($color)
@@ -43,6 +44,7 @@ class Label
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
@@ -53,7 +55,7 @@ class Label
     }
 
     /**
-     * Returns an array representation of this object
+     * Returns an array representation of this object.
      *
      * @return array
      */

@@ -3,8 +3,7 @@
 namespace CarlosIO\Geckoboard\Widgets;
 
 /**
- * Class Bullet
- * @package CarlosIO\Geckoboard\Widgets
+ * Class Bullet.
  */
 class Bullet extends Widget
 {
@@ -19,6 +18,7 @@ class Bullet extends Widget
 
     /**
      * @param $orientation
+     *
      * @return $this
      */
     public function setOrientation($orientation)
@@ -38,6 +38,7 @@ class Bullet extends Widget
 
     /**
      * @param $item
+     *
      * @return $this
      */
     public function setItem($item)
@@ -53,7 +54,7 @@ class Bullet extends Widget
     }
 
     /**
-     * Get data in array format
+     * Get data in array format.
      *
      * @return array
      */
@@ -61,7 +62,7 @@ class Bullet extends Widget
     {
         return array(
             'orientation' => $this->getOrientation(),
-            'item' => $this->getItem()->toArray()
+            'item' => $this->getItem()->toArray(),
         );
     }
 }

@@ -1,9 +1,9 @@
 <?php
+
 namespace CarlosIO\Geckoboard\Data;
 
 /**
- * Class Entry
- * @package CarlosIO\Geckoboard\Data
+ * Class Entry.
  */
 class Entry
 {
@@ -22,6 +22,7 @@ class Entry
 
     /**
      * @param $prefix
+     *
      * @return $this
      */
     public function setPrefix($prefix)
@@ -41,6 +42,7 @@ class Entry
 
     /**
      * @param $text
+     *
      * @return $this
      */
     public function setText($text)
@@ -60,6 +62,7 @@ class Entry
 
     /**
      * @param $value
+     *
      * @return $this
      */
     public function setValue($value)

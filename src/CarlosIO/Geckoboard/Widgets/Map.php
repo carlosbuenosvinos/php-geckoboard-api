@@ -5,8 +5,7 @@ namespace CarlosIO\Geckoboard\Widgets;
 use CarlosIO\Geckoboard\Data\Point;
 
 /**
- * Class Map
- * @package CarlosIO\Geckoboard\Widgets
+ * Class Map.
  */
 class Map extends Widget
 {
@@ -30,6 +29,7 @@ class Map extends Widget
 
     /**
      * @param Point $point
+     *
      * @return $this
      */
     public function addPoint(Point $point)
@@ -45,7 +45,7 @@ class Map extends Widget
     public function getData()
     {
         $result = array();
-        foreach($this->dataset as $point) {
+        foreach ($this->dataset as $point) {
             $result[] = $point->toArray();
         }
 

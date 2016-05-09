@@ -52,7 +52,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
                     array(
                         'city' => array(
                             'city_name' => $point1->getCityName(),
-                            'country_code' => $point1->getCountryCode()
+                            'country_code' => $point1->getCountryCode(),
                         ),
                         'size' => $point1->getSize(),
                         'color' => $point1->getColor(),
@@ -60,13 +60,13 @@ class MapTest extends \PHPUnit_Framework_TestCase
                     array(
                         'city' => array(
                             'city_name' => $point2->getCityName(),
-                            'country_code' => $point2->getCountryCode()
+                            'country_code' => $point2->getCountryCode(),
                         ),
                         'size' => $point2->getSize(),
                         'color' => $point2->getColor(),
                     ),
-                )
-            )
+                ),
+            ),
         );
 
         $this->assertSame($expectedResult, $myMap->getData());

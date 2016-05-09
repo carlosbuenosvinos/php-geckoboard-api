@@ -65,7 +65,7 @@ class GeckoMeterTest extends \PHPUnit_Framework_TestCase
         $myGeckoMeter->setMinData($entry);
         $myGeckoMeter->setMaxData($entry);
 
-        $expectedData =array(
+        $expectedData = array(
             'item' => $myGeckoMeter->getValue(),
             'max' => array(
                 'text' => $entry->getText(),
@@ -81,7 +81,5 @@ class GeckoMeterTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertSame($expectedData, $myGeckoMeter->getData());
-
-
     }
 }

@@ -6,8 +6,7 @@ use CarlosIO\Geckoboard\Data\ItemList\Label;
 use CarlosIO\Geckoboard\Data\ItemList\Title;
 
 /**
- * Class ItemList
- * @package CarlosIO\Geckoboard\Widgets
+ * Class ItemList.
  */
 class ItemList extends Widget
 {
