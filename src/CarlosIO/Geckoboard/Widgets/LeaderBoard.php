@@ -54,7 +54,7 @@ class LeaderBoard extends Widget
     {
         return array(
             'items' => array_map(
-                function ($item) {
+                function (Item $item) {
                     /*
                      * @var Item $item
                      */
