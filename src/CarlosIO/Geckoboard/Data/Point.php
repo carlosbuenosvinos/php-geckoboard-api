@@ -189,6 +189,7 @@ class Point
     }
 
     /**
+     * @return int
      */
     public function getSize()
     {
