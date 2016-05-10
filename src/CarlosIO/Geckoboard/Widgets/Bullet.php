@@ -9,6 +9,7 @@ class Bullet extends Widget
 {
     protected $item;
     protected $orientation;
+    protected $dataset;
 
     public function __construct()
     {
