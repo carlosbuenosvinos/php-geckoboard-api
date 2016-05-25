@@ -43,6 +43,11 @@ class NumberAndSecondaryStat extends Widget
     private $absolute = false;
 
     /**
+     * @var boolean
+     */
+    private $displayAsTimeDuration = false;
+
+    /**
      * Set data main prefix (€, $, etc.).
      *
      * @param string $mainPrefix
@@ -198,6 +203,20 @@ class NumberAndSecondaryStat extends Widget
     }
 
     /**
+     * Mark this widget for display main value as time duration (from milliseconds).
+     *
+     * @param boolean $displayAsTimeDuration
+     *
+     * @return NumberAndSecondaryStat
+     */
+    public function setDisplayAsTimeDuration($displayAsTimeDuration)
+    {
+        $this->displayAsTimeDuration = $displayAsTimeDuration;
+
+        return $this;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getData()
@@ -210,6 +229,10 @@ class NumberAndSecondaryStat extends Widget
         $prefix = $this->getMainPrefix();
         if (null !== $prefix) {
             $data['prefix'] = (string) $prefix;
+        }
+
+        if ($this->displayAsTimeDuration) {
+            $data['type'] = 'time_duration';
         }
 
         $result = array(
