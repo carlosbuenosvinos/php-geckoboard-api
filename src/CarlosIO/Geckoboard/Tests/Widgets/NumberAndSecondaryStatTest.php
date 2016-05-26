@@ -81,4 +81,14 @@ class NumberAndSecondaryStatTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue($data['absolute']);
     }
+
+    public function testSetDisplayAsTimeDuration()
+    {
+        $widget = new NumberAndSecondaryStat();
+        $widget->setDisplayAsTimeDuration(true);
+
+        $data = $widget->getData();
+
+        $this->assertSame('time_duration', $data['item'][0]['type']);
+    }
 }
