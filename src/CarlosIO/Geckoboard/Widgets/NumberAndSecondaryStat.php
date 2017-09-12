@@ -215,6 +215,34 @@ class NumberAndSecondaryStat extends Widget
 
         return $this;
     }
+    
+    /**
+     * Sets the precision for decimal values.
+     *
+     * @param int $precision The precision value, from 0 to 6
+     *
+     * @return NumberAndSecondaryStat
+     */
+    public function setPrecision($precision)
+    {
+        $this->precision = $precision;
+
+        return $this;
+    }
+
+    /**
+     * Sets the abbreviation (suffix) for values.
+     *
+     * @param string $abbreviation The abbreviation suffix, Possible values K, M, B, T and none
+     *
+     * @return NumberAndSecondaryStat
+     */
+    public function setAbbreviation($abbreviation)
+    {
+        $this->abbreviation = $abbreviation;
+
+        return $this;
+    }
 
     /**
      * {@inheritdoc}
@@ -242,6 +270,14 @@ class NumberAndSecondaryStat extends Widget
 
         if ($this->absolute) {
             $result['absolute'] = $this->absolute;
+        }
+        
+        if ($this->precision !== false) {
+            $result['precision'] = $this->precision;
+        }
+
+        if ($this->abbreviation) {
+            $result['abbreviation'] = $this->abbreviation;
         }
 
         $secondaryValue = $this->getSecondaryValue();
